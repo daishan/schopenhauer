@@ -1,3 +1,7 @@
+body {
+    color: rgb(128, 128, 128);
+}
+
 .nav-line {
     stroke: rgb(230, 230, 230);
     stroke-width: 2;
@@ -19,7 +23,10 @@
 .nav-text {
     font-family: 'Playfair Display', serif;
     font-size: 150%;
+    font-weight: 400;
+    text-transform: uppercase;
     letter-spacing: 0.2px;
+    fill: rgb(128, 128, 128);
     opacity: 100;
 }
 
@@ -48,7 +55,6 @@
     position: absolute;
     top: 0;
     left: 0;
-
 }
 
 .nav-small {
@@ -60,4 +66,54 @@
 .nav-small .nav-text {
     transition-duration: 1s;
     opacity: 0;
+}
+
+.contentpane {
+    width: 100%;
+    height: 100%;
+    display: none;
+    border: 2px solid black;
+}
+
+.contentpane-left {
+    width: 50%;
+    height: 100%;
+    border-right: 2px dotted grey;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 200%;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: right;
+}
+
+.singleheadline {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.doubleheadline {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.doubleheadline hr {
+    width: 25%;
+}
+
+.contentpane-right {
+    width: 49%;
+    height: 100%;
+    display: block;
+    float: right;
+}
+
+.contentpane-right iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }

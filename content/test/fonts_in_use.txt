@@ -1,0 +1,24 @@
+Fonts actively used in this project
+-----------------------------------
+
+
+Font name       :   Georgia
+Font provider   :   system
+
+******************************************************************************
+
+Font name       :   Playfair Display
+Font provider   :   google
+
+******************************************************************************
+
+Font name       :   lato
+Font provider   :   typekit
+
+******************************************************************************
+
+
+
+
+
+Created by Typecast on 2015/05/15.

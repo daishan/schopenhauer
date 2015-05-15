@@ -8,12 +8,13 @@ var schop = (function ($) {
                     continue;
                 }
                 var point2 = pointAtOffset(j, radius, offsetX, offsetY);
-                renderLine(svg, point1, point2, 'line' + i + '_' + j, 'nav-line');
-                renderLine(svg, point1, point2, 'linec' + i + '_' + j, 'nav-line-clickable');
+                var $line = renderLine(svg, point1, point2, 'line' + i + '_' + j, 'nav-line');
+                var $linec = renderLine(svg, point1, point2, 'linec' + i + '_' + j, 'nav-line-clickable');
+                attachClickLineListener($linec, i, j);
+                attachLineHoverListener($linec, i, j);
             }
             renderTextAtVertex(svg, i, point1, radius, offsetX, offsetY);
         }
-        attachEventListeners();
     }
 
     function getSvgContext() {
@@ -37,32 +38,44 @@ var schop = (function ($) {
         var y = point.y - (signY * -1 * dim.height / 2);
         var $text = $(svg.text(x, y, text));
         $text.addClass('nav-text');
+        $text.click(function (ev) {
+            console.log('click nav-text', ev);
+            $('#singleheadline')
+                .text(text)
+                .css('display', 'inline-block');
+            $('#doubleheadline')
+                .css('display', 'none');
+            toggleNavigation();
+            return false;
+        })
     }
 
-    function attachEventListeners() {
-        for (var i = 0; i < 8; i++) {
-            for (var j = 0; j < 8; j++) {
-                if (i >= j) {
-                    continue;
+    function attachClickLineListener($line, i, j) {
+        $line.click(function () {
+            $('#singleheadline').css('display', 'none');
+            $('#doubleheadline').css('display', 'inline-block');
+            $('#headline1').text(nodetexts[i]);
+            $('#headline2').text(nodetexts[j]);
+            toggleNavigation();
+            return false;
+        });
+    }
+
+    function attachLineHoverListener(line, i, j) {
+        line.hover((function (i, j) {
+                return function () {
+                    var targetLine = $('#line' + i + '_' + j);
+                    targetLine[0].className = 'nav-line nav-line-hover';
+                    targetLine.attr('class', 'nav-line nav-line-hover');
                 }
-                var line = $('#linec' + i + '_' + j);
-                console.log('found', line);
-                line.hover((function (i, j) {
-                        return function () {
-                            var targetLine = $('#line' + i + '_' + j);
-                            targetLine[0].className = 'nav-line nav-line-hover';
-                            targetLine.attr('class', 'nav-line nav-line-hover');
-                        }
-                    })(i, j),
-                    (function (i, j) {
-                        return function () {
-                            var targetLine = $('#line' + i + '_' + j);
-                            targetLine.attr('class', 'nav-line');
-                        }
-                    })(i, j)
-                );
-            }
-        }
+            })(i, j),
+            (function (i, j) {
+                return function () {
+                    var targetLine = $('#line' + i + '_' + j);
+                    targetLine.attr('class', 'nav-line');
+                }
+            })(i, j)
+        );
     }
 
     function pointAtOffset(n, radius, offsetX, offsetY) {
@@ -114,16 +127,28 @@ var schop = (function ($) {
         }
     }
 
+    function toggleNavigation() {
+        var $nav = $('#nav');
+        if ($nav.hasClass('nav-small')) {
+            $('#contentpane').css('display', 'none');
+        }
+        $nav.toggleClass('nav-small');
+    }
+
     function init() {
         $('body').click(function (ev) {
-            console.log('click', ev);
-            var $nav = $('#nav');
-            if ($nav.attr('class') == 'nav') {
-                $nav.attr('class', 'nav nav-small');
-            } else {
-                $nav.attr('class', 'nav');
+            console.log('click nav', ev);
+            if ($('#nav').hasClass('nav-small')) {
+                toggleNavigation();
             }
         });
+
+        $('#nav').on('webkitTransitionEnd', function (ev) {
+            console.log('webkitTransitionEnd', ev);
+            if ($('#nav').hasClass('nav-small')) {
+                $('#contentpane').css('display', 'block');
+            }
+        })
     }
 
     return {
@@ -141,12 +166,12 @@ jQuery(document).ready(function () {
 });
 
 var nodetexts = [
-    'SATZ VOM GRUNDE',
-    'DIE WELT ALS WILLE',
-    'DIE WELT ALS VORSTELLUNG',
-    'METAPHYSIK DES SCHÖNEN',
-    'BEJAHUNG & VERNEINUNG',
-    'SCHLECHTE & GUTE MUSIK',
-    'ENTZWEIUNG & VERSÖHNUNG',
-    'KLASSISCHE & POPULÄRE MUSIK'
+    'Satz vom Grunde',
+    'Die Welt als Wille',
+    'Die Welt als Vorstellung',
+    'Metaphysik des Schönen',
+    'Bejahung & Verneinung',
+    'Schlechte & gute Musik',
+    'Entzweihung & Versöhnung',
+    'Klassische & populäre Musik'
 ];
