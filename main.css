@@ -20,6 +20,7 @@
     font-family: 'Playfair Display', serif;
     font-size: 150%;
     letter-spacing: 0.2px;
+    opacity: 100;
 }
 
 .nav-container {
@@ -47,13 +48,16 @@
     position: absolute;
     top: 0;
     left: 0;
+
 }
 
 .nav-small {
     transition-duration: 1s;
     transform: scale(0.1);
+
 }
 
 .nav-small .nav-text {
-    display: none;
+    transition-duration: 1s;
+    opacity: 0;
 }
