@@ -133,9 +133,9 @@ var schop = (function ($) {
 })(jQuery);
 
 jQuery(document).ready(function () {
-    var radius = 350;
-    var offsetX = 450;
-    var offsetY = 150;
+    var radius = 450;
+    var offsetX = 350;
+    var offsetY = 50;
     schop.init();
     schop.render(radius, offsetX, offsetY);
 });
