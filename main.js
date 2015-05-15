@@ -133,20 +133,20 @@ var schop = (function ($) {
 })(jQuery);
 
 jQuery(document).ready(function () {
-    var radius = 400;
-    var offsetX = 100;
-    var offsetY = 100;
+    var radius = 350;
+    var offsetX = 450;
+    var offsetY = 150;
     schop.init();
     schop.render(radius, offsetX, offsetY);
 });
 
 var nodetexts = [
-    'Lorem Ipsum',
-    'Dolor sit amet',
-    'asdf',
-    'asdf',
-    'asdf',
-    'asdf',
-    'asdf',
-    'asdf'
+    'SATZ VOM GRUNDE',
+    'DIE WELT ALS WILLE',
+    'DIE WELT ALS VORSTELLUNG',
+    'METAPHYSIK DES SCHÖNEN',
+    'BEJAHUNG & VERNEINUNG',
+    'SCHLECHTE & GUTE MUSIK',
+    'ENTZWEIUNG & VERSÖHNUNG',
+    'KLASSISCHE & POPULÄRE MUSIK'
 ];

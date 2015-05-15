@@ -1,11 +1,11 @@
 .nav-line {
-    stroke: rgb(125, 125, 125);
+    stroke: rgb(230, 230, 230);
     stroke-width: 2;
     z-index: 0;
 }
 
 .nav-line-hover {
-    stroke: rgb(255, 0, 0);
+    stroke: rgb(248, 164, 120);
     stroke-width: 4;
 }
 
@@ -17,9 +17,20 @@
 }
 
 .nav-text {
-    font-family: 'Shadows Into Light', cursive;
-    font-size: 200%;
-    letter-spacing: 1px;
+    font-family: 'Playfair Display', serif;
+    font-size: 150%;
+    letter-spacing: 0.2px;
+}
+
+.nav-container {
+    left: 50vw;
+    top: 50vh;
+    transform: translateX(-50%) translateY(-50%);
+    display: inline-block;
+    position: relative;
+
+    width: 95vw;
+    height: 95vh;
 }
 
 .nav {
@@ -27,27 +38,15 @@
     transform: scale(1.0) translate(0, 0);
     transform-origin: 50% 0;
 
-    /* svg into : object, img or inline */
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+
     display: block;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* only required for <img /> */
-}
-
-.nav-container {
-    left: 50%;
-    top: 50vh;
-    transform: translateX(-50%) translateY(-50%);
-    display: inline-block;
-    position: relative;
-    /*width: 60%;*/
-    width: 90vmin;
-    height: 90vmin;
-    /*margin-left: 20%;*/
-    padding-bottom: 0%; /* depends on svg ratio, for my zebra height/width = 1.2 so padding-bottom = 50% * 1.2 = 60% */
-
-    vertical-align: middle; /* top | middle | bottom ... do what you want */
 }
 
 .nav-small {
