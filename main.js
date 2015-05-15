@@ -1,6 +1,9 @@
 var schop = (function ($) {
     function renderOctagon(radius, offsetX, offsetY) {
-        $('#nav').html('');
+        var $nav = $('#nav');
+        $nav.html('');
+        $nav.svg();
+        var svg = $nav.svg('get');
         for (var i = 0; i < 8; i++) {
             var point1 = pointAtOffset(i, radius, offsetX, offsetY);
             for (var j = 0; j < 8; j++) {
@@ -8,46 +11,77 @@ var schop = (function ($) {
                     continue;
                 }
                 var point2 = pointAtOffset(j, radius, offsetX, offsetY);
-                var line = renderLine(point1, point2, 'nav-line');
-                var lineClickable = renderLine(point1, point2, 'nav-line-clickable');
-                lineClickable
-                    .hover(function () {
-                        console.log('over');
-                        line.attr('class', 'nav-line nav-line-hover');
-                    },
-                    function () {
-                        console.log('out');
-                        line.attr('class', 'nav-line');
-                    });
-                lineClickable.click(console.log);
+                var line = renderLine(svg, point1, point2, 'line' + i + '_' + j, 'nav-line');
+                renderLine(svg, point1, point2, undefined, 'nav-line-clickable');
             }
-            var dim = stringDimensions('Lorem Ipsum', 'nav-text');
-            //console.log('dimensions', dim);
-            var signX = Math.sign(point1.x - offsetX - radius);
-            var signY = Math.sign(point1.y - offsetY - radius);
-            //console.log(point1, signX, signY);
-            //signX = signY = 0;
-            $('<text/>')
-                .text('Lorem Ipsum')
-                .attr('x', point1.x - dim.width / 2 - (signX * -1 * dim.width / 2))
-                .attr('y', point1.y - (signY * -1 * dim.height / 2))
-                .addClass('nav-text')
-                .appendTo('#nav');
+            renderTextAtVertex(point1, radius, offsetX, offsetY);
         }
-
-
         // refresh html hack to move svg elements into svg namespace
-        $("body").html($("body").html());
+        var $body = $("body");
+        //$body.html($body.html());
+        attachEventListeners(radius, offsetX, offsetY);
     }
 
-    function renderLine(point1, point2, clazz) {
-        return $('<line/>')
-            .attr('x1', point1.x)
-            .attr('y1', point1.y)
-            .attr('x2', point2.x)
-            .attr('y2', point2.y)
-            .addClass(clazz)
+    function renderLine(svg, point1, point2, id, clazz) {
+        //return $('<line/>')
+        //    .attr('x1', point1.x)
+        //    .attr('y1', point1.y)
+        //    .attr('x2', point2.x)
+        //    .attr('y2', point2.y)
+        //.attr('id', id)
+        //    .addClass(clazz)
+        //    .appendTo('#nav');
+        var line = svg.line(point1.x, point1.y, point2.x, point2.y);
+        $(line)
+            .attr('id', id)
+            .addClass(clazz);
+        //console.log(line);
+        return $(line);
+    }
+
+    function renderTextAtVertex(point, radius, offsetX, offsetY) {
+        var dim = stringDimensions('Lorem Ipsum', 'nav-text');
+        //console.log('dimensions', dim);
+        var signX = Math.sign(point.x - offsetX - radius);
+        var signY = Math.sign(point.y - offsetY - radius);
+        //console.log(point1, signX, signY);
+        //signX = signY = 0;
+        $('<text/>')
+            .text('Lorem Ipsum')
+            .attr('x', point.x - dim.width / 2 - (signX * -1 * dim.width / 2))
+            .attr('y', point.y - (signY * -1 * dim.height / 2))
+            .addClass('nav-text')
             .appendTo('#nav');
+    }
+
+    function attachEventListeners(radius, offsetX, offsetY) {
+        for (var i = 0; i < 8; i++) {
+            var point1 = pointAtOffset(i, radius, offsetX, offsetY);
+            for (var j = 0; j < 8; j++) {
+                if (i >= j) {
+                    continue;
+                }
+                var point2 = pointAtOffset(j, radius, offsetX, offsetY);
+                var line = $('line[x1="' + point1.x + '"][y1="' + point1.y + '"][x2="' + point2.x + '"][y2="' + point2.y + '"][class="nav-line-clickable"]');
+                //console.log('found', line);
+                line.hover((function (i, j) {
+                        return function () {
+                            var targetLine = $('#line' + i + '_' + j);
+                            targetLine[0].className = 'nav-line nav-line-hover';
+                            //console.log('over', targetLine);
+                            targetLine.attr('class', 'nav-line nav-line-hover');
+                        }
+                    })(i, j),
+                    (function (i, j) {
+                        return function () {
+                            var targetLine = $('#line' + i + '_' + j);
+                            //console.log('out', targetLine);
+                            targetLine.attr('class', 'nav-line');
+                        }
+                    })(i, j)
+                );
+            }
+        }
     }
 
     function pointAtOffset(n, radius, offsetX, offsetY) {
@@ -133,6 +167,6 @@ jQuery(document).ready(function () {
     schop.init();
     schop.renderOctagon(radius, offsetX, offsetY);
     setTimeout(function () {
-        schop.renderOctagon(radius, offsetX, offsetY);
+        //schop.renderOctagon(radius, offsetX, offsetY);
     }, 50);
 });
