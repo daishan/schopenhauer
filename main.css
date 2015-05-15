@@ -133,8 +133,9 @@ hr {
 }
 
 .contentpane-right iframe {
+    margin-top: 4%;
     width: 100%;
-    height: 100%;
+    height: 96%;
     border: none;
 }
 
