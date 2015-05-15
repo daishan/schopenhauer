@@ -64,6 +64,9 @@ var schop = (function ($) {
     function attachLineHoverListener(line, i, j) {
         line.hover((function (i, j) {
                 return function () {
+                    if ($('#nav').hasClass('nav-small')) {
+                        return;
+                    }
                     var targetLine = $('#line' + i + '_' + j);
                     targetLine[0].className = 'nav-line nav-line-hover';
                     targetLine.attr('class', 'nav-line nav-line-hover');
@@ -76,14 +79,6 @@ var schop = (function ($) {
                 }
             })(i, j)
         );
-    }
-
-    function pointAtOffset(n, radius, offsetX, offsetY) {
-        var point = pointAt(n, radius);
-        return {
-            "x": point.x + offsetX,
-            "y": point.y + offsetY
-        }
     }
 
     function stringDimensions(string, clazz, element) {
@@ -103,6 +98,14 @@ var schop = (function ($) {
         var dim = {'width': dom.width(), 'height': dom.height()};
         dom.remove();
         return dim;
+    }
+
+    function pointAtOffset(n, radius, offsetX, offsetY) {
+        var point = pointAt(n, radius);
+        return {
+            "x": point.x + offsetX,
+            "y": point.y + offsetY
+        }
     }
 
     function pointAt(n, radius) {
@@ -136,19 +139,18 @@ var schop = (function ($) {
     }
 
     function init() {
-        $('body').click(function (ev) {
-            console.log('click nav', ev);
-            if ($('#nav').hasClass('nav-small')) {
-                toggleNavigation();
-            }
-        });
-
-        $('#nav').on('webkitTransitionEnd', function (ev) {
-            console.log('webkitTransitionEnd', ev);
-            if ($('#nav').hasClass('nav-small')) {
-                $('#contentpane').css('display', 'block');
-            }
-        })
+        $('#nav')
+            .click(function (ev) {
+                console.log('click nav', ev);
+                if ($('#nav').hasClass('nav-small')) {
+                    toggleNavigation();
+                }
+            }).on('webkitTransitionEnd', function (ev) {
+                console.log('webkitTransitionEnd', ev);
+                if ($('#nav').hasClass('nav-small')) {
+                    $('#contentpane').css('display', 'block');
+                }
+            });
     }
 
     return {
