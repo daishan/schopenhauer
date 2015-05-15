@@ -1,5 +1,6 @@
-(function ($) {
+var schop = (function ($) {
     function renderOctagon(radius, offsetX, offsetY) {
+        $('#nav').html('');
         for (var i = 0; i < 8; i++) {
             var point1 = pointAtOffset(i, radius, offsetX, offsetY);
             for (var j = 0; j < 8; j++) {
@@ -7,27 +8,45 @@
                     continue;
                 }
                 var point2 = pointAtOffset(j, radius, offsetX, offsetY);
-                renderLine(point1, point2);
+                var line = renderLine(point1, point2, 'nav-line');
+                var lineClickable = renderLine(point1, point2, 'nav-line-clickable');
+                lineClickable
+                    .hover(function () {
+                        console.log('over');
+                        line.attr('class', 'nav-line nav-line-hover');
+                    },
+                    function () {
+                        console.log('out');
+                        line.attr('class', 'nav-line');
+                    });
+                lineClickable.click(console.log);
             }
+            var dim = stringDimensions('Lorem Ipsum', 'nav-text');
+            //console.log('dimensions', dim);
+            var signX = Math.sign(point1.x - offsetX - radius);
+            var signY = Math.sign(point1.y - offsetY - radius);
+            //console.log(point1, signX, signY);
+            //signX = signY = 0;
             $('<text/>')
                 .text('Lorem Ipsum')
-                .attr('x', point1.x)
-                .attr('y', point1.y)
+                .attr('x', point1.x - dim.width / 2 - (signX * -1 * dim.width / 2))
+                .attr('y', point1.y - (signY * -1 * dim.height / 2))
                 .addClass('nav-text')
-                .appendTo('#nav')
+                .appendTo('#nav');
         }
+
 
         // refresh html hack to move svg elements into svg namespace
         $("body").html($("body").html());
     }
 
-    function renderLine(point1, point2) {
-        $('<line/>')
+    function renderLine(point1, point2, clazz) {
+        return $('<line/>')
             .attr('x1', point1.x)
             .attr('y1', point1.y)
             .attr('x2', point2.x)
             .attr('y2', point2.y)
-            .addClass('nav-line')
+            .addClass(clazz)
             .appendTo('#nav');
     }
 
@@ -37,6 +56,31 @@
             "x": point.x + offsetX,
             "y": point.y + offsetY
         }
+    }
+
+    function stringDimensions(string, clazz, element) {
+        if (!element) {
+            element = 'div'
+        }
+        var dom = $('<' + element + '>' + string + '</' + element + '>')
+            .addClass(clazz)
+            .css({
+                'display': 'block',
+                'position': 'absolute',
+                'float': 'left',
+                'white-space': 'nowrap',
+                'visibility': 'hidden'
+                //'font': font
+            })
+            .appendTo($('body'));
+        //console.log(dom);
+        var dim = {
+            'width': dom.width(),
+            'height': dom.height()
+        };
+        //var width = dom.width();
+        dom.remove();
+        return dim;
     }
 
     function pointAt(n, radius) {
@@ -61,5 +105,34 @@
         }
     }
 
-    renderOctagon(300, 50, 50);
+    function init() {
+        $('body').click(function (ev) {
+            //ev.preventDefault();
+            //console.log('click', ev);
+            if ($('#nav').attr('class') == 'nav') {
+                //console.log('nav scale down');
+                $('#nav').attr('class', 'nav nav-small');
+            } else {
+                //console.log('nav scale up');
+                $('#nav').attr('class', 'nav');
+            }
+            //return false;
+        });
+    }
+
+    return {
+        'init': init,
+        'renderOctagon': renderOctagon
+    };
 })(jQuery);
+
+jQuery(document).ready(function () {
+    var radius = 300;
+    var offsetX = 200;
+    var offsetY = 50
+    schop.init();
+    schop.renderOctagon(radius, offsetX, offsetY);
+    setTimeout(function () {
+        schop.renderOctagon(radius, offsetX, offsetY);
+    }, 50);
+});
