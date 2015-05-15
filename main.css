@@ -1,0 +1,14 @@
+/*@font-face {
+    font-family: testfont;
+    src: url(sansation_light.woff);
+}*/
+
+.nav-line {
+    stroke: rgb(125, 125, 125);
+    stroke-width: 2
+}
+
+.nav-text {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 200%;
+}
