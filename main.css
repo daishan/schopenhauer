@@ -1,17 +1,7 @@
-/*@font-face {
-    font-family: testfont;
-    src: url(sansation_light.woff);
-}*/
-
 .nav-line {
     stroke: rgb(125, 125, 125);
     stroke-width: 2;
     z-index: 0;
-}
-
-.nav-line:hover {
-    /*stroke: rgb(255, 0, 0);*/
-    /*stroke-width: 4;*/
 }
 
 .nav-line-hover {
@@ -20,19 +10,11 @@
 }
 
 .nav-line-clickable {
-    /*visibility: hidden;*/
     stroke-width: 20;
     stroke: rgb(255, 255, 255);
     opacity: 0;
     z-index: 1000;
 }
-
-/*.nav-line-clickable:hover {*/
-/*visibility: visible;*/
-/*opacity: 100;*/
-/*stroke: rgb(255, 0, 0);*/
-/*stroke-width: 5;*/
-/*}*/
 
 .nav-text {
     font-family: 'Shadows Into Light', cursive;
@@ -54,9 +36,15 @@
 }
 
 .nav-container {
+    left: 50%;
+    top: 50vh;
+    transform: translateX(-50%) translateY(-50%);
     display: inline-block;
     position: relative;
-    width: 100%;
+    /*width: 60%;*/
+    width: 90vmin;
+    height: 90vmin;
+    /*margin-left: 20%;*/
     padding-bottom: 0%; /* depends on svg ratio, for my zebra height/width = 1.2 so padding-bottom = 50% * 1.2 = 60% */
 
     vertical-align: middle; /* top | middle | bottom ... do what you want */
