@@ -39,7 +39,7 @@ var schop = (function ($) {
         var $text = $(svg.text(x, y, text));
         $text.addClass('nav-text');
         $text.click(function (ev) {
-            console.log('click nav-text', ev);
+            //console.log('click nav-text', ev);
             $('#singleheadline')
                 .text(text)
                 .css('display', 'inline-block');
@@ -143,12 +143,12 @@ var schop = (function ($) {
     function init() {
         $('#nav')
             .click(function (ev) {
-                console.log('click nav', ev);
+                //console.log('click nav', ev);
                 if ($('#nav').hasClass('nav-small')) {
                     toggleNavigation();
                 }
             }).on('webkitTransitionEnd', function (ev) {
-                console.log('webkitTransitionEnd', ev);
+                //console.log('webkitTransitionEnd', ev);
                 if ($('#nav').hasClass('nav-small')) {
                     $('#contentpane').css('display', 'block');
                 }
