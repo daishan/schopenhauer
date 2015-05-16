@@ -136,6 +136,7 @@ var schop = (function ($) {
             $('#contentpane').css('display', 'none');
         }
         $nav.toggleClass('nav-small');
+        $('#nav-container').toggleClass('nav-small', $nav.hasClass('nav-small'));
     }
 
     function init() {
