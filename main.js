@@ -32,8 +32,8 @@ var schop = (function ($) {
     function renderTextAtVertex(svg, i, point, radius, offsetX, offsetY) {
         var text = nodetexts[i];
         var dim = stringDimensions(text, 'nav-text');
-        var signX = Math.sign(point.x - offsetX - radius);
-        var signY = Math.sign(point.y - offsetY - radius);
+        var signX = sign(point.x - offsetX - radius);
+        var signY = sign(point.y - offsetY - radius);
         var x = point.x - dim.width / 2 - (signX * -1 * dim.width / 2);
         var y = point.y - (signY * -1 * dim.height / 2);
         var $text = $(svg.text(x, y, text));
@@ -152,6 +152,16 @@ var schop = (function ($) {
                     $('#contentpane').css('display', 'block');
                 }
             });
+    }
+
+    function sign(x) {
+        if (x > 0) {
+            return 1;
+        } else if (x < 0) {
+            return -1;
+        } else {
+            return 0;
+        }
     }
 
     return {
