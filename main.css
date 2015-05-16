@@ -162,7 +162,8 @@ hr {
 
 .contentpane-right iframe {
     margin-top: 4%;
-    width: 100%;
+    margin-left: 10%;
+    width: 80%;
     height: 96%;
     border: none;
 }
