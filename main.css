@@ -8,13 +8,13 @@ hr {
 
 .nav-line {
     stroke: rgb(230, 230, 230);
-    stroke-width: 3;
+    stroke-width: 1.5;
     z-index: 0;
 }
 
 .nav-line-hover {
     stroke: rgb(248, 164, 120);
-    stroke-width: 5;
+    stroke-width: 3;
 }
 
 .nav-line-clickable {
@@ -80,6 +80,11 @@ hr {
 .nav-small .nav-text {
     transition-duration: 1s;
     opacity: 0;
+}
+
+.nav-small .nav-line {
+    transition-duration: 1s;
+    stroke-width: 7;
 }
 
 .contentpane {
