@@ -49,7 +49,8 @@ hr {
 .main {
     left: 50vw;
     top: 50vh;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
     display: inline-block;
     position: relative;
 
@@ -60,15 +61,18 @@ hr {
 .nav-container {
     transition-duration: 1s;
     transform: scale(1.0);
+    -webkit-transform: scale(1.0);
     width: 100%;
     height: 100%;
     position: relative;
 
     transform-origin: 50% 0;
+    -webkit-transform-origin: 50% 0;
 }
 
 .nav-container.nav-small {
     transform: scale(0.1);
+    -webkit-transform: scale(0.1);
 }
 
 .nav {
@@ -81,6 +85,7 @@ hr {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
 
     overflow: visible;
 }
@@ -118,8 +123,11 @@ hr {
     width: 100%;
     height: 100%;
     display: flex;
+    display: -webkit-flex;
     justify-content: flex-end;
+    -webkit-justify-content: flex-end;
     align-items: center;
+    -webkit-align-items: center;
 
     font-family: 'Playfair Display', serif;
     font-size: 200%;
