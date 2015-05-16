@@ -5,7 +5,9 @@ body {
 }
 
 hr {
-    border: 1px solid rgb(230, 230, 230);
+    border: none;
+    background-color: rgb(230, 230, 230);
+    height: 0.15rem;
 }
 
 .nav-line {
@@ -33,10 +35,10 @@ hr {
     transition-duration: 1s;
 
     font-family: 'Playfair Display', serif;
-    font-size: 150%;
+    font-size: 28px;
     font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 0.2px;
+    letter-spacing: 2px;
     fill: rgb(128, 128, 128);
     opacity: 100;
     cursor: pointer;
@@ -51,31 +53,27 @@ hr {
     top: 50vh;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
-    display: inline-block;
     position: relative;
 
     width: 95vw;
-    height: 95vh;
+    height: 98vh;
 }
 
 .nav-container {
     transition-duration: 1s;
-    transform: scale(1.0);
-    -webkit-transform: scale(1.0);
     width: 100%;
     height: 100%;
     position: relative;
-
-    transform-origin: 50% 0;
-    -webkit-transform-origin: 50% 0;
 }
 
 .nav-container.nav-small {
-    transform: scale(0.1);
-    -webkit-transform: scale(0.1);
+    height: 7rem;
 }
 
 .nav {
+    transition-duration: 0.4s;
+    transition-delay: 0s;
+    transition-timing-function: ease-out;
     max-width: 70%;
     max-height: 70%;
     width: auto;
@@ -91,6 +89,12 @@ hr {
 }
 
 .nav.nav-small {
+    transition-duration: 0.4s;
+    transition-delay: 0.6s;
+    transition-timing-function: ease-in;
+
+    max-width: 100%;
+    max-height: 100%;
     cursor: pointer;
 }
 
@@ -105,12 +109,13 @@ hr {
 }
 
 .contentpane {
+    top: 3.4rem; /* half of .nav-small height - 1px */
     width: 100%;
-    height: 99%;
-    display: none;
+    height: calc(100% - 3.4rem);
     position: absolute;
-    top: 0;
+
     z-index: -1;
+    display: none;
 }
 
 .contentpane-left {
@@ -119,7 +124,7 @@ hr {
     float: left;
 }
 
-.headline-text {
+.topic {
     width: 100%;
     height: 100%;
     display: flex;
@@ -129,28 +134,28 @@ hr {
     align-items: center;
     -webkit-align-items: center;
 
-    font-family: 'Playfair Display', serif;
-    font-size: 200%;
-    font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 2px;
     color: rgb(52, 77, 103);
     text-align: right;
 }
 
-.singleheadline {
+.topic h1 {
+    margin: 0;
+}
+
+.topic-single {
     display: inline-block;
     vertical-align: middle;
     margin-right: 10%;
 }
 
-.doubleheadline {
+.topic-synthesis {
     display: inline-block;
     vertical-align: middle;
     margin-right: 10%;
 }
 
-.doubleheadline hr {
+.topic-synthesis hr {
     width: 25%;
 }
 
@@ -160,16 +165,22 @@ hr {
     float: right;
 }
 
-.contentpane-right iframe {
-    margin-top: 4%;
-    margin-left: 10%;
-    width: 80%;
+.content {
+    margin: 0;
+    position: relative;
+    top: 4%;
+    left: 10%;
+    width: 79%;
     height: 96%;
     border: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-right: 1%;
 }
 
 .contentpane-left > hr, .contentpane-right > hr {
     position: relative;
     width: 80%;
-    top: 3%;
+    top: 0;
+    margin-top: 0;
 }

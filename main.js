@@ -137,6 +137,7 @@ var schop = (function ($) {
         }
         $nav.toggleClass('nav-small');
         $('#nav-container').toggleClass('nav-small', $nav.hasClass('nav-small'));
+        $('#content').load('content/test2/fragment.html');
     }
 
     function init() {
