@@ -45,7 +45,7 @@ var schop = (function ($) {
                 .css('display', 'inline-block');
             $('#doubleheadline')
                 .css('display', 'none');
-            toggleNavigation();
+            openSingleTopic(i);
             return false;
         })
     }
@@ -56,7 +56,7 @@ var schop = (function ($) {
             $('#doubleheadline').css('display', 'inline-block');
             $('#headline1').text(nodetexts[i]);
             $('#headline2').text(nodetexts[j]);
-            toggleNavigation();
+            toggleSynthesis(i, j);
             return false;
         });
     }
@@ -137,7 +137,30 @@ var schop = (function ($) {
         }
         $nav.toggleClass('nav-small');
         $('#nav-container').toggleClass('nav-small', $nav.hasClass('nav-small'));
-        $('#content').load('content/test2/fragment.html');
+    }
+
+    function openSingleTopic(i) {
+        if (!$('#nav').hasClass('nav-small')) {
+            var code = String.fromCharCode(65 + i);
+            $('#content').load('content/' + code + '.html', function (response, status) {
+                if (status == 'error') {
+                    $('#content').load('content/fallback.html');
+                }
+            });
+        }
+        toggleNavigation();
+    }
+
+    function toggleSynthesis(i, j) {
+        if (!$('#nav').hasClass('nav-small')) {
+            var code = i * 8 + j;
+            $('#content').load('content/' + code + '.html', function (response, status) {
+                if (status == 'error') {
+                    $('#content').load('content/fallback.html');
+                }
+            });
+        }
+        toggleNavigation();
     }
 
     function init() {
