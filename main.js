@@ -180,9 +180,9 @@ jQuery(document).ready(function () {
 });
 
 var nodetexts = [
-    'Satz vom Grunde',
-    'Die Welt als Wille',
+    'Der Satz vom Grunde',
     'Die Welt als Vorstellung',
+    'Die Welt als Wille',
     'Metaphysik des Schönen',
     'Bejahung & Verneinung',
     'Schlechte & gute Musik',

@@ -1,26 +1,26 @@
 html {
     font-size: 62.5%;
+    color: rgb(128, 128, 128);
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "Playfair Display", serif;
     font-weight: 400;
     font-style: normal;
-    color: rgb(128, 128, 128);
 }
 
 h1 {
-    font-size: 4.0rem;
-    line-height: 5.1rem;
-    letter-spacing: 0.2rem;
+    font-size: 2.5rem;
+    line-height: 3.3rem;
     margin: 0 0 1.5rem 0;
     text-indent: 0;
 }
 
 h2 {
-    font-size: 3.6rem;
-    line-height: 4.6rem;
-    margin: 0 0 2.5rem 0;
+    font-style: italic;
+    font-size: 1.7rem;
+    /*margin-top: 1.5rem;*/
+    margin: 5rem 0 0 0;
 }
 
 h3 {
@@ -42,19 +42,18 @@ blockquote.pull-quote {
 }
 
 p {
-    margin: 3.0rem 0 2.5rem 0;
-    text-transform: inherit;
-    font-size: 1.5rem;
+    margin: 1.5rem 0 0 0;
+    font-size: 1.3rem;
+    line-height: 2rem;
     font-family: "lato", sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-style: Normal;
     text-align: justify;
-    color: rgb(128, 128, 128);
 }
 
 p.intro {
     font-size: 1.6rem;
-    line-height: 2.7rem;
+    line-height: 2.2rem;
     margin: 2.5rem 0 1.3rem 0;
     color: rgb(248, 164, 120);
     font-weight: 400;
@@ -72,7 +71,7 @@ p.quote {
     letter-spacing: 0.04rem;
 }
 
-@media screen and (min-width: 800px) and (max-width: 1280px) {
+@media screen and (min-width: 800px) and (max-width: 1200px) {
     html {
         font-size: 50%;
     }

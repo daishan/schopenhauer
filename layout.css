@@ -1,13 +1,30 @@
 body {
-    color: rgb(128, 128, 128);
-    margin: 0;
-    padding: 0;
+    height: 100vh; /* this shouldn't be necessary, but it is!? */
+    box-shadow: inset rgb(248, 164, 120) 0 0 0 0.2rem;
+    overflow: hidden;
 }
 
 hr {
     border: none;
     background-color: rgb(230, 230, 230);
     height: 0.15rem;
+}
+
+.main {
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    position: relative;
+
+    /*padding-left: 2.5vw;*/
+    /*padding-right: 2.5vw;*/
+    /*padding-top: 1vh;*/
+    /*padding-bottom: 1vh;*/
+    width: 95vw;
+    height: 98vh;
+    /*width: 100%;*/
+    /*height: 100%;*/
 }
 
 .nav-line {
@@ -32,7 +49,7 @@ hr {
 }
 
 .nav-text {
-    transition-duration: 1s;
+    transition: opacity 1s, fill 0.1s;
 
     font-family: 'Playfair Display', serif;
     font-size: 28px;
@@ -48,15 +65,8 @@ hr {
     fill: rgb(248, 164, 120);
 }
 
-.main {
-    left: 50vw;
-    top: 50vh;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    position: relative;
-
-    width: 95vw;
-    height: 98vh;
+.nav-small .nav-text {
+    opacity: 0;
 }
 
 .nav-container {
@@ -98,11 +108,6 @@ hr {
     cursor: pointer;
 }
 
-.nav-small .nav-text {
-    transition-duration: 1s;
-    opacity: 0;
-}
-
 .nav-small .nav-line {
     transition-duration: 1s;
     stroke-width: 7;
@@ -111,7 +116,7 @@ hr {
 .contentpane {
     top: 3.4rem; /* half of .nav-small height - 1px */
     width: 100%;
-    height: calc(100% - 3.4rem);
+    height: calc(100% - (3.4rem + 3.5rem));
     position: absolute;
 
     z-index: -1;
@@ -119,9 +124,17 @@ hr {
 }
 
 .contentpane-left {
-    width: 49%;
+    width: 40%;
     height: 100%;
     float: left;
+    margin-left: 5%;
+}
+
+.contentpane-right {
+    width: 40%;
+    height: 100%;
+    float: right;
+    margin-right: 5%;
 }
 
 .topic {
@@ -141,46 +154,61 @@ hr {
 
 .topic h1 {
     margin: 0;
+    font-size: 4.5rem;
+    line-height: 4.3rem;
+    letter-spacing: 0.08rem;
 }
 
 .topic-single {
     display: inline-block;
     vertical-align: middle;
-    margin-right: 10%;
 }
 
 .topic-synthesis {
     display: inline-block;
     vertical-align: middle;
-    margin-right: 10%;
 }
 
 .topic-synthesis hr {
     width: 25%;
 }
 
-.contentpane-right {
-    width: 49%;
-    height: 100%;
-    float: right;
-}
-
 .content {
-    margin: 0;
-    position: relative;
-    top: 4%;
-    left: 10%;
-    width: 79%;
-    height: 96%;
+    width: calc(100% - (2 * 4.5rem));
+    margin-left: 4.5rem;
+    height: calc(100% - (2 * 1.5rem));
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
     border: none;
     overflow-y: scroll;
     overflow-x: hidden;
-    padding-right: 1%;
+    padding-right: 0.5rem;
 }
 
 .contentpane-left > hr, .contentpane-right > hr {
-    position: relative;
-    width: 80%;
-    top: 0;
     margin-top: 0;
+}
+
+.controls {
+    position: relative;
+    top: 0;
+    float: right;
+    width: 2.5rem;
+    height: 100%;
+
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+}
+
+.controls img {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
