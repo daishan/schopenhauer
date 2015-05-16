@@ -105,8 +105,11 @@ hr {
 
     max-width: 100%;
     max-height: 100%;
-    width: 12rem;
     cursor: pointer;
+}
+
+.nav.nav-small-finished {
+    width: 12rem;
 }
 
 .nav-small .nav-line {

@@ -135,6 +135,7 @@ var schop = (function ($) {
         if ($nav.hasClass('nav-small')) {
             $('#contentpane').css('display', 'none');
         }
+        $nav.removeClass('nav-small-finished');
         $nav.toggleClass('nav-small');
         $('#nav-container').toggleClass('nav-small', $nav.hasClass('nav-small'));
     }
@@ -174,6 +175,7 @@ var schop = (function ($) {
                 //console.log('webkitTransitionEnd', ev);
                 if ($('#nav').hasClass('nav-small')) {
                     $('#contentpane').css('display', 'block');
+                    $('#nav').addClass('nav-small-finished');
                 }
             });
     }
