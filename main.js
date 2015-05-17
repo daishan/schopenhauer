@@ -56,11 +56,11 @@ var schop = (function ($) {
         $text.click(function (ev) {
             //console.log('click nav-text', ev);
             $('#singleheadline')
-                .text(text)
+                .text(nodetexts[i].complete)
                 .css('display', 'inline-block');
             $('#doubleheadline')
                 .css('display', 'none');
-            openSingleTopic(i);
+            toggleSingleTopic(i);
             return false;
         })
     }
@@ -166,7 +166,7 @@ var schop = (function ($) {
         $('#nav-container').toggleClass('nav-small', $nav.hasClass('nav-small'));
     }
 
-    function openSingleTopic(i) {
+    function toggleSingleTopic(i) {
         if (!$('#nav').hasClass('nav-small')) {
             var code = String.fromCharCode(65 + i);
             $('#content').load('content/' + code + '.html', function (response, status) {
