@@ -140,6 +140,7 @@ var schop = (function ($) {
         }
         $nav.removeClass('nav-small-finished');
         $nav.toggleClass('nav-small');
+        $nav.children().removeClass('nav-line-hover');
         $('#nav-container').toggleClass('nav-small', $nav.hasClass('nav-small'));
     }
 
