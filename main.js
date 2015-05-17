@@ -215,6 +215,7 @@ var schop = (function ($) {
             $('#controls-right').find('.button').hide();
             if ($('#content').find('.infotext').length) {
                 $('#text-info-button').show();
+                $('#pdf-download-button').show();
             }
         });
 
