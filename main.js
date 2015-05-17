@@ -56,7 +56,7 @@ var schop = (function ($) {
         $text.click(function (ev) {
             //console.log('click nav-text', ev);
             $('#singleheadline')
-                .text(nodetexts[i].complete)
+                .html(getHtmlNodeText(i))
                 .css('display', 'inline-block');
             $('#doubleheadline')
                 .css('display', 'none');
@@ -75,12 +75,16 @@ var schop = (function ($) {
         return JSON.stringify(widths);
     }
 
+    function getHtmlNodeText(i) {
+        return nodetexts[i].lines[0] + '<br>' + nodetexts[i].lines[1];
+    }
+
     function attachClickLineListener($line, i, j) {
         $line.click(function () {
             $('#singleheadline').css('display', 'none');
             $('#doubleheadline').css('display', 'inline-block');
-            $('#headline1').text(nodetexts[i].complete);
-            $('#headline2').text(nodetexts[j].complete);
+            $('#headline1').html(getHtmlNodeText(i));
+            $('#headline2').html(getHtmlNodeText(j));
             toggleSynthesis(i, j);
             return false;
         });
