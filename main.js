@@ -13,7 +13,7 @@ var schop = (function ($) {
                 attachClickLineListener($linec, i, j);
                 attachLineHoverListener($linec, i, j);
             }
-            renderTextAtVertex(svg, i, point1, radius, offsetX, offsetY);
+            renderTextAtVertex(svg, i, point1);
         }
     }
 
@@ -29,17 +29,29 @@ var schop = (function ($) {
             .addClass(clazz);
     }
 
-    function renderTextAtVertex(svg, i, point, radius, offsetX, offsetY) {
-        var text = nodetexts[i];
-        var dim = stringDimensions(text, 'nav-text');
-        var signX = sign(point.x - offsetX - radius);
-        var signY = sign(point.y - offsetY - radius);
-        var x = point.x - dim.width / 2 + (signX * (dim.width / 2 + 10));
-        var y = point.y + dim.height / 2 + (signY * dim.height);
-        if (i == 5) {
-            x -= 10;
+    function renderTextAtVertex(svg, i, point) {
+        var x1, x2, y1, y2;
+        if (nodetexts[i].align == 'left') {
+            x1 = point.x;
+            x2 = point.x;
+        } else if (nodetexts[i].align == 'center') {
+            x1 = point.x - linewidths[i][0] / 2;
+            x2 = point.x - linewidths[i][1] / 2;
+        } else {
+            var max = Math.max(linewidths[i][0], linewidths[i][1]);
+            x1 = point.x - max + Math.max(0, linewidths[i][1] - linewidths[i][0]);
+            x2 = point.x - max + Math.max(0, linewidths[i][0] - linewidths[i][1]);
         }
-        var $text = $(svg.text(x, y, text));
+        x1 += nodetexts[i].offset.x;
+        x2 += nodetexts[i].offset.x;
+        y1 = point.y + nodetexts[i].offset.y;
+        y2 = point.y + nodetexts[i].offset.y + 30;
+
+        var svgText = svg.createText();
+        svgText.span(nodetexts[i].lines[0], {x: x1, y: y1});
+        svgText.span(nodetexts[i].lines[1], {x: x2, y: y2});
+
+        var $text = $(svg.text(0, 0, svgText));
         $text.addClass('nav-text');
         $text.click(function (ev) {
             //console.log('click nav-text', ev);
@@ -53,12 +65,22 @@ var schop = (function ($) {
         })
     }
 
+    function calcLineWidths() {
+        var widths = [];
+        for (var i = 0; i < nodetexts.length; i++) {
+            var dim0 = stringDimensions(nodetexts[i].lines[0], 'nav-text');
+            var dim1 = stringDimensions(nodetexts[i].lines[1], 'nav-text');
+            widths.push([dim0.width, dim1.width]);
+        }
+        return JSON.stringify(widths);
+    }
+
     function attachClickLineListener($line, i, j) {
         $line.click(function () {
             $('#singleheadline').css('display', 'none');
             $('#doubleheadline').css('display', 'inline-block');
-            $('#headline1').text(nodetexts[i]);
-            $('#headline2').text(nodetexts[j]);
+            $('#headline1').text(nodetexts[i].complete);
+            $('#headline2').text(nodetexts[j].complete);
             toggleSynthesis(i, j);
             return false;
         });
@@ -196,7 +218,8 @@ var schop = (function ($) {
 
     return {
         'init': init,
-        "render": renderNavigation
+        'render': renderNavigation,
+        'calcLineWidths': calcLineWidths
     };
 })(jQuery);
 
@@ -209,12 +232,14 @@ jQuery(document).ready(function () {
 });
 
 var nodetexts = [
-    'Der Satz vom Grunde',
-    'Die Welt als Vorstellung',
-    'Die Welt als Wille',
-    'Metaphysik des Schönen',
-    'Bejahung & Verneinung',
-    'Schlechte & gute Musik',
-    'Entzweihung & Versöhnung',
-    'Klassische & populäre Musik'
+    {complete: 'Der Satz vom Grunde', lines: ['Der Satz vom', 'Grunde'], align: 'center', offset: {x: 0, y: -60}},
+    {complete: 'Die Welt als Vorstellung', lines: ['Die Welt als', 'Vorstellung'], align: 'left', offset: {x: 30, y: 0}},
+    {complete: 'Die Welt als Wille', lines: ['Die Welt als', 'Wille'], align: 'left', offset: {x: 30, y: 0}},
+    {complete: 'Metaphysik des Schönen', lines: ['Metaphysik', 'des Schönen'], align: 'left', offset: {x: 30, y: 0}},
+    {complete: 'Bejahung & Verneinung', lines: ['Bejahung &', 'Verneinung'], align: 'center', offset: {x: 0, y: 60}},
+    {complete: 'Schlechte & gute Musik', lines: ['Schlechte &', 'gute Musik'], align: 'right', offset: {x: -30, y: 0}},
+    {complete: 'Entzweihung & Versöhnung', lines: ['Entzweihung &', 'Versöhnung'], align: 'right', offset: {x: -30, y: 0}},
+    {complete: 'Klassische & populäre Musik', lines: ['Klassische &', 'populäre Musik'], align: 'right', offset: {x: -30, y: 0}}
 ];
+
+var linewidths = [[227, 126], [209, 220], [209, 93], [195, 213], [192, 199], [209, 185], [253, 209], [218, 264]];
