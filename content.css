@@ -59,7 +59,7 @@ hr.teaser {
     width: 10rem;
 }
 
-p.quote {
+.questions, .quote {
     font-size: 1.9rem;
     line-height: 2.8rem;
     font-style: italic;
@@ -69,6 +69,14 @@ p.quote {
     font-weight: 400;
     text-transform: none;
     letter-spacing: 0.04rem;
+}
+
+.musicinfo {
+    display: none;
+}
+
+.infotext {
+    display: none;
 }
 
 @media screen and (min-width: 800px) and (max-width: 1200px) {

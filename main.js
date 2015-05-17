@@ -208,6 +208,46 @@ var schop = (function ($) {
                 $('#nav').addClass('nav-small-finished');
             }
         });
+
+        $('#text-button').click(function (ev) {
+            console.log('text-button', ev);
+            showTextSection('.questions');
+            $('#controls-right').find('.button').hide();
+            if ($('#content').find('.infotext').length) {
+                $('#text-info-button').show();
+            }
+        });
+
+        $('#music-button').click(function (ev) {
+            console.log('music-button', ev);
+            showTextSection('.questions');
+            $('#controls-right').find('.button').hide();
+            if ($('#content').find('.musicinfo').length) {
+                $('#music-info-button').show();
+            }
+        });
+
+        $('#text-info-button').click(function () {
+            showTextSection('.infotext');
+        });
+
+        $('#music-info-button').click(function () {
+            showTextSection('.musicinfo');
+        });
+
+        $.ajaxSetup({
+            // Disable caching of AJAX responses
+            cache: false
+        });
+    }
+
+    function showTextSection(selector) {
+        $('#content')
+            .children()
+            .hide()
+            .end()
+            .find(selector)
+            .show();
     }
 
     function sign(x) {
