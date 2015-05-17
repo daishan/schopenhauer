@@ -34,8 +34,11 @@ var schop = (function ($) {
         var dim = stringDimensions(text, 'nav-text');
         var signX = sign(point.x - offsetX - radius);
         var signY = sign(point.y - offsetY - radius);
-        var x = point.x - dim.width / 2 - (signX * -1 * dim.width / 2);
-        var y = point.y - (signY * -1 * dim.height / 2);
+        var x = point.x - dim.width / 2 + (signX * (dim.width / 2 + 10));
+        var y = point.y + dim.height / 2 + (signY * dim.height);
+        if (i == 5) {
+            x -= 10;
+        }
         var $text = $(svg.text(x, y, text));
         $text.addClass('nav-text');
         $text.click(function (ev) {
