@@ -169,19 +169,19 @@ var schop = (function ($) {
     }
 
     function init() {
-        $('#nav')
-            .click(function (ev) {
-                //console.log('click nav', ev);
-                if ($('#nav').hasClass('nav-small')) {
-                    toggleNavigation();
-                }
-            }).on('webkitTransitionEnd', function (ev) {
-                //console.log('webkitTransitionEnd', ev);
-                if ($('#nav').hasClass('nav-small')) {
-                    $('#contentpane').css('display', 'block');
-                    $('#nav').addClass('nav-small-finished');
-                }
-            });
+        $('#nav').click(function (ev) {
+            //console.log('click nav', ev);
+            if ($('#nav').hasClass('nav-small')) {
+                toggleNavigation();
+            }
+        });
+        $('#nav-container').on('webkitTransitionEnd transitionend', function (ev) {
+            //console.log('transitionEnd', ev.originalEvent.propertyName);
+            if (ev.originalEvent.propertyName == 'height' && $('#nav').hasClass('nav-small')) {
+                $('#contentpane').css('display', 'block');
+                $('#nav').addClass('nav-small-finished');
+            }
+        });
     }
 
     function sign(x) {
