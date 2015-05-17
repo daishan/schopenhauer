@@ -59,6 +59,11 @@ hr {
     fill: rgb(128, 128, 128);
     opacity: 100;
     cursor: pointer;
+
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .nav-text:hover {
