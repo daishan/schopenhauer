@@ -50,6 +50,7 @@ p.teaser {
     margin: 3.5rem 0 5rem 0;
     color: rgb(248, 164, 120);
     font-weight: 400;
+    /* Kommentar */
 }
 
 hr.teaser {
