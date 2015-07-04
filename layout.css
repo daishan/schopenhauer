@@ -135,14 +135,14 @@ hr {
 
 .contentpane-left {
     width: 40%;
-    height: 100%;
+    height: 80%;
     float: left;
     margin-left: 5%;
 }
 
 .contentpane-right {
     width: 40%;
-    height: 100%;
+    height: 80%;
     float: right;
     margin-right: 5%;
 }
@@ -256,4 +256,28 @@ hr {
 
 .controls-left .button {
     margin-left: 5rem;
+}
+
+#player {
+    height: 20%;
+    width: 10%;
+    /*margin: 20px;*/
+
+    position: relative;
+    left: 50%;
+    /*top: 50%;*/
+    transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+}
+
+.seekbar-line {
+    stroke: rgb(128, 128, 128);
+    stroke-width: 1.5;
+    z-index: 10;
+}
+
+.seekbar-marker {
+    stroke: rgb(248, 164, 120);
+    stroke-width: 1.5;
+    z-index: 9;
 }

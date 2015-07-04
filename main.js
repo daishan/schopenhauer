@@ -226,6 +226,7 @@ var schop = (function ($) {
             if ($('#content').find('.musicinfo').length) {
                 $('#music-info-button').show();
             }
+            audio.play();
         });
 
         $('#text-info-button').click(function () {
@@ -274,6 +275,7 @@ jQuery(document).ready(function () {
     var offsetY = 50;
     schop.init();
     schop.render(radius, offsetX, offsetY);
+    audio.init();
 });
 
 var nodetexts = [
