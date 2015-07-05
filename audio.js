@@ -1,17 +1,27 @@
 var audio = (function ($) {
-    function init() {
-        $('audio').on('timeupdate', function (ev) {
-            console.log('timeupdate', ev, this);
-            updateSeekBar(this.currentTime / this.duration);
-        });
+    var stopCallback;
+
+    function init(onStop) {
+        $('audio')
+            .on('timeupdate', function (ev) {
+                //console.log('timeupdate', ev, this);
+                updateSeekBar(this.currentTime / this.duration);
+            })
+            .on('ended', function (ev) {
+                console.log('ended', ev, this);
+                stopCallback();
+            });
+        stopCallback = onStop;
     }
 
     function play() {
         var audioElement = $('audio').get(0);
         if (audioElement.paused) {
             audioElement.play();
+            return true;
         } else {
             audioElement.pause();
+            return false;
         }
     }
 

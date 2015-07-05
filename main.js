@@ -162,7 +162,8 @@ var schop = (function ($) {
     function toggleNavigation() {
         var $nav = $('#nav');
         if ($nav.hasClass('nav-small')) {
-            $('#contentpane').css('display', 'none');
+            //$('#contentpane').css('display', 'none');
+            $('#contentpane').removeClass('active');
         }
         $nav.removeClass('nav-small-finished');
         $nav.toggleClass('nav-small');
@@ -194,7 +195,20 @@ var schop = (function ($) {
         toggleNavigation();
     }
 
+    function onAudioEnd() {
+        console.log('onAudioEnd');
+        $('.audioctrl').each(function (i, button) {
+            toggleAudioCtrlState($(button), false);
+        })
+    }
+
+    function toggleAudioCtrlState($button, on) {
+        $button.attr('src', $button.data(on ? 'src-on' : 'src-off'));
+    }
+
     function init() {
+        audio.init(onAudioEnd);
+
         $('#nav').click(function (ev) {
             //console.log('click nav', ev);
             if ($('#nav').hasClass('nav-small')) {
@@ -204,7 +218,8 @@ var schop = (function ($) {
         $('#nav-container').on('webkitTransitionEnd transitionend', function (ev) {
             //console.log('transitionEnd', ev.originalEvent.propertyName);
             if (ev.originalEvent.propertyName == 'height' && $('#nav').hasClass('nav-small')) {
-                $('#contentpane').css('display', 'block');
+                //$('#contentpane').css('display', 'block');
+                $('#contentpane').addClass('active');
                 $('#nav').addClass('nav-small-finished');
             }
         });
@@ -226,7 +241,8 @@ var schop = (function ($) {
             if ($('#content').find('.musicinfo').length) {
                 $('#music-info-button').show();
             }
-            audio.play();
+            var playing = audio.play();
+            toggleAudioCtrlState($(this), playing);
         });
 
         $('#text-info-button').click(function () {
@@ -275,7 +291,6 @@ jQuery(document).ready(function () {
     var offsetY = 50;
     schop.init();
     schop.render(radius, offsetX, offsetY);
-    audio.init();
 });
 
 var nodetexts = [
