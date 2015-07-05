@@ -1,0 +1,329 @@
+$orange: rgb(248, 164, 120);
+$light-gray: rgb(230, 230, 230);
+$dark-gray: rgb(128, 128, 128);
+
+body {
+    height: 100vh; /* this shouldn't be necessary, but it is!? */
+    box-shadow: inset $orange 0 0 0 0.2rem;
+    overflow: hidden;
+}
+
+hr {
+    border: none;
+    background-color: rgb(230, 230, 230);
+    height: 0.1rem;
+}
+
+.main {
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+    position: relative;
+
+    /*padding-left: 2.5vw;*/
+    /*padding-right: 2.5vw;*/
+    /*padding-top: 1vh;*/
+    /*padding-bottom: 1vh;*/
+    width: 95vw;
+    height: 98vh;
+    /*width: 100%;*/
+    /*height: 100%;*/
+}
+
+.nav-line {
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+
+    stroke: rgb(230, 230, 230);
+    stroke-width: 1.5;
+    z-index: 0;
+}
+
+.nav-line-hover {
+    stroke: rgb(248, 164, 120);
+    stroke-width: 3;
+}
+
+.nav-line-clickable {
+    stroke-width: 20;
+    stroke: rgb(255, 255, 255);
+    opacity: 0;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.nav-text {
+    transition: opacity 1s, fill 0.1s;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    fill: rgb(128, 128, 128);
+    opacity: 100;
+    cursor: pointer;
+
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.nav-text:hover {
+    fill: rgb(248, 164, 120);
+}
+
+.nav-small .nav-text {
+    opacity: 0;
+}
+
+.nav-container {
+    transition-duration: 1s;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.nav-container.nav-small {
+    height: 7rem;
+}
+
+.nav {
+    transition-duration: 0.4s;
+    transition-delay: 0s;
+    transition-timing-function: ease-out;
+    max-width: 70%;
+    max-height: 70%;
+    width: auto;
+    height: auto;
+
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    overflow: visible;
+}
+
+.nav.nav-small {
+    transition-duration: 0.4s;
+    transition-delay: 0.6s;
+    transition-timing-function: ease-in;
+
+    max-width: 100%;
+    max-height: 100%;
+    cursor: pointer;
+}
+
+.nav.nav-small-finished {
+    width: 12rem;
+}
+
+.nav-small .nav-line {
+    transition-duration: 1s;
+    stroke-width: 7;
+}
+
+.contentpane {
+    top: 3.4rem; /* half of .nav-small height - 1px */
+    width: 100%;
+    height: calc(100% - (3.4rem + 3.5rem));
+    position: absolute;
+
+    z-index: -1;
+    display: none;
+
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.contentpane.active {
+    display: flex;
+}
+
+.contentpane-left {
+    width: 40%;
+    height: 100%;
+    float: left;
+    margin-left: 5%;
+}
+
+.contentpane-center {
+    width: 20%;
+    height: 100%;
+}
+
+.contentpane-right {
+    width: 40%;
+    height: 100%;
+    float: right;
+    margin-right: 5%;
+}
+
+.topic {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+    text-transform: uppercase;
+    color: rgb(128, 128, 128);
+    text-align: right;
+}
+
+.topic h1 {
+    margin: 0;
+    font-size: 4.5rem;
+    line-height: 4.3rem;
+    letter-spacing: 0.08rem;
+}
+
+.topic-single {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.topic-synthesis {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.topic-synthesis hr {
+    width: 20rem;
+    margin-right: 0;
+}
+
+.content-container {
+    width: calc(100% - (2 * 4.5rem));
+    margin-left: 4.5rem;
+    height: calc(100% - (3.4rem + 1.5rem));
+    margin-top: 3.4rem;
+    margin-bottom: 1.5rem;
+    border: none;
+    padding-right: 0.5rem;
+}
+
+.content-container2 {
+    max-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    top: 50%;
+    transform: translateY(-50%);
+    position: relative;
+}
+
+.contentpane-left > hr, .contentpane-right > hr {
+    margin-top: 0;
+}
+
+.controls-right {
+    position: relative;
+    top: 0;
+    float: right;
+    width: 2.5rem;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls-left {
+    height: 2.5rem;
+    width: 100%;
+    margin-top: 2rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.button {
+    width: 3.5rem;
+    height: 3.5rem;
+    cursor: pointer;
+}
+
+.controls-right .button {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: none;
+}
+
+.controls-left .button {
+    margin-left: 5rem;
+}
+
+.contentpane-center {
+    margin-top: 10%;
+}
+
+#buttons-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#buttons-center .button {
+    margin-top: 3rem;
+}
+
+#player {
+    height: 20%;
+    width: 100%;
+    /*margin: 20px;*/
+
+    position: relative;
+    left: 50%;
+    /*top: 50%;*/
+    transform: translate(-50%, 0);
+}
+
+.seekbar-line {
+    stroke: rgb(128, 128, 128);
+    stroke-width: 1.5;
+    z-index: 10;
+}
+
+.seekbar-marker {
+    stroke: rgb(248, 164, 120);
+    stroke-width: 1.5;
+    z-index: 9;
+}
+
+#title {
+    color: rgb(230, 230, 230);
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.title-small {
+    font-size: 20px;
+}
+
+.title-large {
+    font-size: 26px;
+}
+
+#plus-menu {
+    position: absolute;
+    top: 80vh;
+    left: 10vw;
+}
+
+#menu-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}

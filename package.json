@@ -1,0 +1,20 @@
+{
+  "name": "sound-of-schopenhauer",
+  "version": "0.1.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "brunch": "^1.8.3",
+    "javascript-brunch": "^1.7.1",
+    "sass-brunch": "^1.8.10",
+    "css-brunch": ">= 1.0 < 1.9",
+    "uglify-js-brunch": ">= 1.0 < 1.9",
+    "clean-css-brunch": ">= 1.0 < 1.9",
+    "auto-reload-brunch": ">= 1.0 < 1.9",
+    "postcss-brunch": "^0.4.1",
+    "autoprefixer": "^5.1.0"
+  }
+}
