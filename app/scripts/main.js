@@ -100,7 +100,6 @@ var schop = (function ($) {
                         return;
                     }
                     var targetLine = $('#line' + i + '_' + j);
-                    targetLine[0].className = 'nav-line nav-line-hover';
                     targetLine.attr('class', 'nav-line nav-line-hover');
                 }
             })(i, j),
