@@ -1,6 +1,6 @@
-//"use strict";
-
 var schop = (function ($) {
+    "use strict";
+
     function renderNavigation(radius, offsetX, offsetY) {
         var svg = getSvgContext();
         console.log('renderNavigation', svg);
@@ -268,16 +268,6 @@ var schop = (function ($) {
             .end()
             .find(selector)
             .show();
-    }
-
-    function sign(x) {
-        if (x > 0) {
-            return 1;
-        } else if (x < 0) {
-            return -1;
-        } else {
-            return 0;
-        }
     }
 
     return {
