@@ -219,44 +219,10 @@ hr {
   margin-top: 0;
 }
 
-.controls-right {
-  position: relative;
-  top: 0;
-  float: right;
-  width: 2.5rem;
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.controls-left {
-  height: 2.5rem;
-  width: 100%;
-  margin-top: 2rem;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-}
-
 .button {
   width: $button-height;
   height: $button-height;
   cursor: pointer;
-}
-
-.controls-right .button {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  display: none;
-}
-
-.controls-left .button {
-  margin-left: 5rem;
 }
 
 .contentpane-center {
