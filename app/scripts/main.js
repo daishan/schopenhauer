@@ -32,6 +32,14 @@ var schop = (function ($) {
             .addClass(clazz);
     }
 
+    function showSingleHeadline(text) {
+        $('#singleheadline')
+            .html(text)
+            .css('display', 'inline-block');
+        $('#doubleheadline')
+            .css('display', 'none');
+    }
+
     function renderTextAtVertex(svg, i, point) {
         var x1, x2, y1, y2;
         if (nodetexts[i].align == 'left') {
@@ -58,11 +66,8 @@ var schop = (function ($) {
         $text.addClass('nav-text');
         $text.click(function (ev) {
             //console.log('click nav-text', ev);
-            $('#singleheadline')
-                .html(getHtmlNodeText(i))
-                .css('display', 'inline-block');
-            $('#doubleheadline')
-                .css('display', 'none');
+            var headlineText = getHtmlNodeText(i);
+            showSingleHeadline(headlineText);
             toggleSingleTopic(i);
             return false;
         })
@@ -197,6 +202,18 @@ var schop = (function ($) {
         toggleNavigation();
     }
 
+    function loadContent(title, path) {
+        showSingleHeadline(title);
+        $('#content').load('content/' + path + '.html', function (response, status) {
+            if (status == 'error') {
+                $('#content').load('content/fallback.html');
+            }
+        });
+        if (!$('#nav').hasClass('nav-small')) {
+            toggleNavigation();
+        }
+    }
+
     function onAudioEnd() {
         console.log('onAudioEnd');
         $('.audioctrl').each(function (i, button) {
@@ -273,7 +290,8 @@ var schop = (function ($) {
     return {
         'init': init,
         'render': renderNavigation,
-        'calcLineWidths': calcLineWidths
+        'calcLineWidths': calcLineWidths,
+        'load': loadContent
     };
 })(jQuery);
 
