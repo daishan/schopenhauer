@@ -1,8 +1,8 @@
 @font-face {
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Playfair Display'), local('PlayfairDisplay-Regular'), url(playfair.ttf) format('truetype');
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Playfair Display'), local('PlayfairDisplay-Regular'), url(playfair.ttf) format('truetype');
 }
 
 @font-face {
