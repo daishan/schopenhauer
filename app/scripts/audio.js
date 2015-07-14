@@ -5,6 +5,8 @@ var audio = (function ($) {
     var currentPlaylist;
     var titleOverride;
 
+    var audioElement = $('audio').get(0);
+
     function init(onStop) {
         console.log('audio.init()');
         $('audio')
@@ -21,11 +23,19 @@ var audio = (function ($) {
         $('#play-button').click(function () {
             toggleButtonState($('#play-button'), play());
         });
+
+        $('#seekbar').click(function (e) {
+            var seekFraction = (e.pageX - $(this).offset().left) / $(this).width();
+            var seekPos = seekFraction * audioElement.duration;
+            console.log('seek', seekFraction, seekPos);
+            audioElement.currentTime = seekPos;
+        });
+
         stopCallback = onStop;
     }
 
     function play() {
-        var audioElement = $('audio').get(0);
+        //var audioElement = $('audio').get(0);
         if (audioElement.paused) {
             audioElement.play();
             return true;
