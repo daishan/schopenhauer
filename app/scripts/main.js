@@ -192,6 +192,7 @@ var schop = (function ($) {
         audio.reset();
         toggleButtonState($('#text-button'), false);
         toggleButtonState($('#music-button'), false);
+        $('#info-button').css('visibility', 'hidden');
     }
 
     function toggleSingleTopic(i) {
@@ -225,6 +226,7 @@ var schop = (function ($) {
 
     function loadContentWithTitle(title, section, code) {
         showSingleHeadline(title);
+        resetAudioAndButtons();
         loadContentOnly(section, code);
     }
 
