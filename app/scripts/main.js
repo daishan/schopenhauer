@@ -36,7 +36,7 @@ var schop = (function ($) {
     }
 
     function showSingleHeadline(text, index) {
-        var subtext = index ? nodetexts[index].sub : '';
+        var subtext = index === 0 || index ? nodetexts[index].sub : '';
         $('.topic-single')
             .find('h1').html(text).end()
             .find('h2').html(subtext).end()
