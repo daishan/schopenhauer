@@ -280,7 +280,7 @@ var schop = (function ($) {
 
         $('#info-button').click(function (ev) {
             console.log('info-button', ev);
-            loadContentOnly('musikinfo', currentCode);
+            loadContentOnly('musicinfo', currentCode);
         });
 
         $.ajaxSetup({
