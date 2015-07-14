@@ -45,7 +45,8 @@
       z-index: 9; }
   /* line 41, stdin */
   #player #playlist {
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: "Merriweather Sans", sans-serif;
+    font-weight: 300;
     font-size: 1.53rem;
     letter-spacing: 0.0425rem;
     line-height: 2.8rem;
@@ -55,36 +56,38 @@
       cursor: pointer; }
       /* line 49, stdin */
       #player #playlist li.selected {
-        color: #f8a478;
-        cursor: default; }
+        color: #f8a478; }
 
 /* line 3, stdin */
 .content {
   font-family: "Merriweather Sans", sans-serif;
+  font-weight: 300;
   font-size: 1.71rem;
   letter-spacing: 0.0285rem;
   line-height: 3.1rem; }
   /* line 7, stdin */
   .content h1 {
     color: #f8a478;
-    text-transform: capitalize; }
-  /* line 12, stdin */
+    text-transform: capitalize;
+    margin-bottom: 2.5rem; }
+  /* line 13, stdin */
   .content h2 {
     color: #e6e6e6;
     text-transform: capitalize;
     text-align: center;
-    margin-top: 2.5rem; }
-  /* line 19, stdin */
+    margin-top: 3.5rem; }
+  /* line 20, stdin */
   .content p {
     color: gray;
-    margin-top: 1.5rem; }
-  /* line 24, stdin */
-  .content p.lyrics {
-    text-align: center;
-    white-space: pre-line; }
-  /* line 29, stdin */
-  .content blockquote {
-    font-style: italic; }
+    margin-bottom: 2.5rem; }
+    /* line 24, stdin */
+    .content p.lyrics {
+      text-align: center;
+      white-space: pre-line; }
+  /* line 30, stdin */
+  .content q {
+    font-style: italic;
+    quotes: none; }
 
 /* line 6, stdin */
 html {
@@ -149,8 +152,9 @@ hr {
   -webkit-transition: opacity 1s, fill 0.1s;
           transition: opacity 1s, fill 0.1s;
   font-family: 'Playfair Display', serif;
-  font-size: 2.43rem;
-  letter-spacing: 0.081rem;
+  font-weight: 400;
+  font-size: 3.15rem;
+  letter-spacing: 0.14rem;
   line-height: 5rem;
   text-transform: uppercase;
   fill: gray;
@@ -160,15 +164,15 @@ hr {
   -ms-user-select: none;
   -webkit-user-select: none;
           user-select: none; }
-  /* line 78, stdin */
+  /* line 79, stdin */
   .nav-text:hover {
     fill: #f8a478; }
 
-/* line 83, stdin */
+/* line 84, stdin */
 .nav-small .nav-text {
   opacity: 0; }
 
-/* line 87, stdin */
+/* line 88, stdin */
 .nav-container {
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
@@ -192,18 +196,18 @@ hr {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center; }
-  /* line 98, stdin */
+  /* line 99, stdin */
   .nav-container.nav-small {
     height: 7rem; }
-  /* line 102, stdin */
+  /* line 103, stdin */
   .nav-container hr {
     display: none;
     width: 45%; }
-    /* line 106, stdin */
+    /* line 107, stdin */
     .nav-container hr.active {
       display: block; }
 
-/* line 112, stdin */
+/* line 113, stdin */
 .nav {
   -webkit-transition-duration: 0.4s;
           transition-duration: 0.4s;
@@ -216,7 +220,7 @@ hr {
   width: 100%;
   height: 100%;
   overflow: visible; }
-  /* line 123, stdin */
+  /* line 124, stdin */
   .nav.nav-small {
     -webkit-transition-duration: 0.4s;
             transition-duration: 0.4s;
@@ -227,20 +231,20 @@ hr {
     max-width: 100%;
     max-height: 100%;
     cursor: pointer; }
-  /* line 133, stdin */
+  /* line 134, stdin */
   .nav.nav-small-finished {
     width: 12rem;
     -webkit-transition: color 0s;
             transition: color 0s;
     /* do not transition the width change */ }
 
-/* line 139, stdin */
+/* line 140, stdin */
 .nav-small .nav-line {
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
   stroke-width: 7; }
 
-/* line 144, stdin */
+/* line 145, stdin */
 .contentpane {
   top: 3.4rem;
   /* half of .nav-small height - 1px */
@@ -264,43 +268,43 @@ hr {
       -ms-flex-align: center;
           align-items: center; }
 
-/* line 158, stdin */
+/* line 159, stdin */
 .contentpane.active {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
 
-/* line 162, stdin */
+/* line 163, stdin */
 .contentpane-left {
   width: 40%;
   height: 100%;
   float: left; }
 
-/* line 169, stdin */
+/* line 170, stdin */
 .contentpane-center {
   width: 20%;
   height: 100%; }
 
-/* line 174, stdin */
+/* line 175, stdin */
 .contentpane-right {
   width: 40%;
   height: 100%;
   float: right; }
 
-/* line 181, stdin */
+/* line 182, stdin */
 #left-top, #center-top, #right-top {
   height: 20%; }
 
-/* line 185, stdin */
+/* line 186, stdin */
 #left-mid, #center-mid, #right-mid {
   height: 60%; }
 
-/* line 189, stdin */
+/* line 190, stdin */
 #left-bottom, #center-bottom, #right-bottom {
   height: 20%; }
 
-/* line 193, stdin */
+/* line 194, stdin */
 .topic {
   width: 100%;
   height: 100%;
@@ -325,42 +329,43 @@ hr {
   color: gray;
   text-align: right; }
 
-/* line 206, stdin */
+/* line 207, stdin */
 .topic h1 {
   margin: 0;
   font-size: 5.49rem;
   letter-spacing: 0.122rem;
   line-height: 6.2rem; }
 
-/* line 214, stdin */
+/* line 215, stdin */
 .topic-single {
   display: none;
   vertical-align: middle; }
-  /* line 218, stdin */
+  /* line 219, stdin */
   .topic-single.active {
     display: inline-block; }
-  /* line 222, stdin */
+  /* line 223, stdin */
   .topic-single h2 {
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: "Merriweather Sans", sans-serif;
+    font-weight: 300;
     font-size: 1.98rem;
     letter-spacing: 0.264rem;
     line-height: 2.2rem;
     color: #f8a478; }
 
-/* line 229, stdin */
+/* line 230, stdin */
 .topic-synthesis {
   display: none;
   vertical-align: middle; }
-  /* line 233, stdin */
+  /* line 234, stdin */
   .topic-synthesis.active {
     display: inline-block; }
-  /* line 237, stdin */
+  /* line 238, stdin */
   .topic-synthesis hr {
     width: 25rem;
     margin-right: 0;
     background-color: #f8a478; }
 
-/* line 244, stdin */
+/* line 245, stdin */
 .content-container {
   width: -webkit-calc(100% - (2 * 4.5rem));
   width: calc(100% - (2 * 4.5rem));
@@ -372,7 +377,7 @@ hr {
   border: none;
   padding-right: 0.5rem; }
 
-/* line 254, stdin */
+/* line 255, stdin */
 .content-container2 {
   max-height: 100%;
   overflow-y: auto;
@@ -383,13 +388,13 @@ hr {
           transform: translateY(-50%);
   position: relative; }
 
-/* line 264, stdin */
+/* line 265, stdin */
 .button {
   width: 3.5rem;
   height: 3.5rem;
   cursor: pointer; }
 
-/* line 278, stdin */
+/* line 279, stdin */
 #center-mid {
   display: -webkit-box;
   display: -webkit-flex;
@@ -409,7 +414,7 @@ hr {
       -ms-flex-align: center;
           align-items: center; }
 
-/* line 285, stdin */
+/* line 286, stdin */
 #buttons-center-1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -429,7 +434,7 @@ hr {
       -ms-flex-align: center;
           align-items: center; }
 
-/* line 292, stdin */
+/* line 293, stdin */
 #buttons-center-3 {
   height: 10.5rem;
   display: -webkit-box;
@@ -450,25 +455,27 @@ hr {
       -ms-flex-align: center;
           align-items: center; }
 
-/* line 301, stdin */
+/* line 302, stdin */
 #text-button {
   margin-bottom: 3.5rem; }
 
-/* line 309, stdin */
+/* line 306, stdin */
 #title {
   color: #e6e6e6;
   text-transform: uppercase;
   text-align: center;
   padding-top: 5.5rem; }
-  /* line 318, stdin */
+  /* line 315, stdin */
   #title .title-small {
     font-family: "Merriweather Sans", sans-serif;
+    font-weight: 300;
     font-size: 1.44rem;
     letter-spacing: 0.024rem;
     line-height: 2.5rem; }
-  /* line 324, stdin */
+  /* line 321, stdin */
   #title .title-large {
     font-family: 'Playfair Display', serif;
+    font-weight: 400;
     font-size: 2.34rem;
     letter-spacing: 0.039rem;
     line-height: 2.5rem; }
