@@ -31,7 +31,7 @@ var audio = (function ($) {
     }
 
     function play() {
-        //var audioElement = $('audio').get(0);
+        toggleButtonState($('#play-button'), true);
         if (audioElement.paused) {
             audioElement.play();
             return true;
@@ -66,6 +66,7 @@ var audio = (function ($) {
                 .find('.tracklength').text(entry.length).end()
                 .click(function () {
                     selectEntry.call(this, entry);
+                    play();
                 })
                 .appendTo($list);
         });
