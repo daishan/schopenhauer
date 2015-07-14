@@ -48,14 +48,14 @@ var audio = (function ($) {
         titleOverride = titleOverrideParam;
         currentPlaylist = playlist;
         renderPlaylist();
-        $('.part-of-audio').show();
+        $('.part-of-audio').css('visibility', 'visible');
     }
 
     function renderPlaylist() {
         var $list = $('#playlist').html('');
         $.each(currentPlaylist, function (i, entry) {
             //console.log(i, entry, entry.title, entry.file, entry.length);
-            $('<li><span class="trackname"></span><span class="tracklength"></span></li>')
+            $('<li><span class="trackname"></span> - <span class="tracklength"></span></li>')
                 .find('.trackname').text(titleOverride ? titleOverride : entry.title).end()
                 .find('.tracklength').text(entry.length).end()
                 .click(function () {
@@ -82,7 +82,7 @@ var audio = (function ($) {
 
     function reset() {
         stop();
-        $('.part-of-audio').hide();
+        $('.part-of-audio').css('visibility', 'hidden');
     }
 
     function toggleButtonState($button, on) {

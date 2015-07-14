@@ -1,25 +1,62 @@
 @import 'variables';
 
 .part-of-audio {
-  display: none;
+  //display: none;
+  visibility: hidden;
 }
 
-#playlist {
-  font-family: 'Merriweather Sans', sans-serif;
+#player-container {
+  position: fixed;
+  top: 80vh;
+  height: 20%;
+  width: 100%;
+}
 
-  li {
-    cursor: pointer;
+#player {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 40%;
 
-    &.selected {
-      color: $orange;
-      cursor: default;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  #seekbar {
+    height: 2rem;
+    width: 20vw;
+
+    .seekbar-line {
+      stroke: $dark-gray;
+      stroke-width: 1.5;
+      z-index: 10;
+    }
+
+    .seekbar-marker {
+      stroke: $orange;
+      stroke-width: 1.5;
+      z-index: 9;
     }
   }
-}
 
-.trackname {
-}
+  #playlist {
+    font-family: 'Merriweather Sans', sans-serif;
+    text-align: center;
 
-.tracklength {
-  float: right;
+    li {
+      cursor: pointer;
+
+      &.selected {
+        color: $orange;
+        cursor: default;
+      }
+
+      .trackname {
+      }
+
+      .tracklength {
+      }
+    }
+  }
+
 }

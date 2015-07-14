@@ -278,29 +278,6 @@ hr {
 //  margin-top: $button-height;
 //}
 
-#player {
-  height: 20%;
-  width: 100%;
-  /*margin: 20px;*/
-
-  position: relative;
-  left: 50%;
-  /*top: 50%;*/
-  transform: translate(-50%, 0);
-}
-
-.seekbar-line {
-  stroke: $dark-gray;
-  stroke-width: 1.5;
-  z-index: 10;
-}
-
-.seekbar-marker {
-  stroke: $orange;
-  stroke-width: 1.5;
-  z-index: 9;
-}
-
 #title {
   color: $light-gray;
   text-transform: uppercase;
