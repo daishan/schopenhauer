@@ -35,12 +35,21 @@ var schop = (function ($) {
             .addClass(clazz);
     }
 
-    function showSingleHeadline(text) {
-        $('#singleheadline')
-            .html(text)
-            .css('display', 'inline-block');
-        $('#doubleheadline')
-            .css('display', 'none');
+    function showSingleHeadline(text, index) {
+        var subtext = index ? nodetexts[index].sub : '';
+        $('.topic-single')
+            .find('h1').html(text).end()
+            .find('h2').html(subtext).end()
+            .addClass('active');
+        $('.topic-synthesis').removeClass('active');
+    }
+
+    function showSynthesisHeadline(i, j) {
+        $('.topic-single').removeClass('active');
+        $('.topic-synthesis')
+            .addClass('active')
+            .find('#headline1').html(getHtmlNodeText(i)).end()
+            .find('#headline2').html(getHtmlNodeText(j)).end();
     }
 
     function renderTextAtVertex(svg, i, point) {
@@ -70,7 +79,7 @@ var schop = (function ($) {
         $text.click(function (ev) {
             //console.log('click nav-text', ev);
             var headlineText = getHtmlNodeText(i);
-            showSingleHeadline(headlineText);
+            showSingleHeadline(headlineText, i);
             toggleSingleTopic(i);
             return false;
         })
@@ -92,10 +101,7 @@ var schop = (function ($) {
 
     function attachClickLineListener($line, i, j) {
         $line.click(function () {
-            $('#singleheadline').css('display', 'none');
-            $('#doubleheadline').css('display', 'inline-block');
-            $('#headline1').html(getHtmlNodeText(i));
-            $('#headline2').html(getHtmlNodeText(j));
+            showSynthesisHeadline(i, j);
             toggleSynthesis(i, j);
             return false;
         });
@@ -306,14 +312,14 @@ jQuery(document).ready(function () {
 });
 
 var nodetexts = [
-    {complete: 'Der Satz vom Grunde', lines: ['Der Satz vom', 'Grunde'], align: 'center', offset: {x: 0, y: -60}},
-    {complete: 'Die Welt als Vorstellung', lines: ['Die Welt als', 'Vorstellung'], align: 'left', offset: {x: 30, y: 0}},
-    {complete: 'Die Welt als Wille', lines: ['Die Welt als', 'Wille'], align: 'left', offset: {x: 30, y: 0}},
-    {complete: 'Metaphysik des Schönen', lines: ['Metaphysik', 'des Schönen'], align: 'left', offset: {x: 30, y: 0}},
-    {complete: 'Bejahung & Verneinung', lines: ['Bejahung &', 'Verneinung'], align: 'center', offset: {x: 0, y: 60}},
-    {complete: 'Schlechte & gute Musik', lines: ['Schlechte &', 'gute Musik'], align: 'right', offset: {x: -30, y: 0}},
-    {complete: 'Entzweihung & Versöhnung', lines: ['Entzweihung &', 'Versöhnung'], align: 'right', offset: {x: -30, y: 0}},
-    {complete: 'Klassische & populäre Musik', lines: ['Klassische &', 'populäre Musik'], align: 'right', offset: {x: -30, y: 0}}
+    {complete: 'Der Satz vom Grunde', lines: ['Der Satz vom', 'Grunde'], align: 'center', offset: {x: 0, y: -60}, sub: 'FIXME'},
+    {complete: 'Die Welt als Vorstellung', lines: ['Die Welt als', 'Vorstellung'], align: 'left', offset: {x: 30, y: 0}, sub: 'Erkenntnistheorie'},
+    {complete: 'Die Welt als Wille', lines: ['Die Welt als', 'Wille'], align: 'left', offset: {x: 30, y: 0}, sub: 'FIXME'},
+    {complete: 'Metaphysik des Schönen', lines: ['Metaphysik', 'des Schönen'], align: 'left', offset: {x: 30, y: 0}, sub: 'FIXME'},
+    {complete: 'Bejahung & Verneinung', lines: ['Bejahung &', 'Verneinung'], align: 'center', offset: {x: 0, y: 60}, sub: 'FIXME'},
+    {complete: 'Schlechte & gute Musik', lines: ['Schlechte &', 'gute Musik'], align: 'right', offset: {x: -30, y: 0}, sub: 'FIXME'},
+    {complete: 'Entzweihung & Versöhnung', lines: ['Entzweihung &', 'Versöhnung'], align: 'right', offset: {x: -30, y: 0}, sub: 'FIXME'},
+    {complete: 'Klassische & populäre Musik', lines: ['Klassische &', 'populäre Musik'], align: 'right', offset: {x: -30, y: 0}, sub: 'FIXME'}
 ];
 
 var linewidths = [[227, 126], [209, 220], [209, 93], [195, 213], [192, 199], [209, 185], [253, 209], [218, 264]];

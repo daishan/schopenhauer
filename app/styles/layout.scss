@@ -212,18 +212,33 @@ hr {
 }
 
 .topic-single {
-  display: inline-block;
+  display: none;
   vertical-align: middle;
+
+  &.active {
+    display: inline-block;
+  }
+
+  h2 {
+    font-family: 'Merriweather Sans', sans-serif;
+    @include font(22, 120, 22);
+    color: $orange;
+  }
 }
 
 .topic-synthesis {
-  display: inline-block;
+  display: none;
   vertical-align: middle;
-}
 
-.topic-synthesis hr {
-  width: 20rem;
-  margin-right: 0;
+  &.active {
+    display: inline-block;
+  }
+
+  hr {
+    width: 25rem;
+    margin-right: 0;
+    background-color: $orange;
+  }
 }
 
 .content-container {
