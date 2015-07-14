@@ -2,7 +2,7 @@ var plusmenu = (function ($, schop) {
     "use strict";
 
     function init() {
-        console.log('plusmenu.init()')
+        console.log('plusmenu.init()');
         $('#plus-button')
             .on('click', function () {
                 console.log('#plus-button click');
@@ -10,7 +10,7 @@ var plusmenu = (function ($, schop) {
             });
 
         $('#impressum-button').click(function () {
-            schop.load("Impressum", 'special/impressum');
+            schop.load("Impressum", 'special', 'impressum');
             $('#menu-buttons').find('.button').removeClass('active');
         });
     }

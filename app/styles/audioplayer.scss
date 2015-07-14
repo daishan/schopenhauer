@@ -1,0 +1,25 @@
+@import 'variables';
+
+.part-of-audio {
+  display: none;
+}
+
+#playlist {
+  font-family: 'Merriweather Sans', sans-serif;
+
+  li {
+    cursor: pointer;
+
+    &.selected {
+      color: $orange;
+      cursor: default;
+    }
+  }
+}
+
+.trackname {
+}
+
+.tracklength {
+  float: right;
+}

@@ -1,6 +1,9 @@
 var schop = (function ($) {
     "use strict";
 
+    var currentCode;
+    var firstIndex, secondIndex;
+
     function renderNavigation(radius, offsetX, offsetY) {
         var svg = getSvgContext();
         console.log('renderNavigation', svg);
@@ -169,8 +172,8 @@ var schop = (function ($) {
     function toggleNavigation() {
         var $nav = $('#nav');
         if ($nav.hasClass('nav-small')) {
-            //$('#contentpane').css('display', 'none');
             $('#contentpane').removeClass('active');
+            resetAudioAndButtons();
         }
         $nav.removeClass('nav-small-finished');
         $nav.toggleClass('nav-small');
@@ -178,35 +181,52 @@ var schop = (function ($) {
         $('#nav-container').toggleClass('nav-small', $nav.hasClass('nav-small'));
     }
 
+    function resetAudioAndButtons() {
+        audio.reset();
+        toggleButtonState($('#text-button'), false);
+        toggleButtonState($('#music-button'), false);
+    }
+
     function toggleSingleTopic(i) {
-        if (!$('#nav').hasClass('nav-small')) {
-            var code = String.fromCharCode(65 + i);
-            $('#content').load('content/' + code + '.html', function (response, status) {
-                if (status == 'error') {
-                    $('#content').load('content/fallback.html');
-                }
-            });
-        }
         toggleNavigation();
+        if ($('#nav').hasClass('nav-small')) {
+            selectCode(i);
+            loadContentOnly('questions', currentCode);
+        }
     }
 
     function toggleSynthesis(i, j) {
-        if (!$('#nav').hasClass('nav-small')) {
-            var code = i * 8 + j;
-            $('#content').load('content/' + code + '.html', function (response, status) {
-                if (status == 'error') {
-                    $('#content').load('content/fallback.html');
-                }
-            });
-        }
         toggleNavigation();
+        if ($('#nav').hasClass('nav-small')) {
+            selectCode(i, j);
+            loadContentOnly('questions', currentCode);
+        }
     }
 
-    function loadContent(title, path) {
+    function selectCode(i, j) {
+        firstIndex = i;
+        if (j != undefined) {
+            secondIndex = j;
+            currentCode = synthesisMapping[i + '_' + j];
+        }
+        else {
+            secondIndex = null;
+            currentCode = String.fromCharCode(65 + i);
+        }
+        console.log('selectCode()', i, j, '->', currentCode);
+    }
+
+    function loadContentWithTitle(title, section, code) {
         showSingleHeadline(title);
-        $('#content').load('content/' + path + '.html', function (response, status) {
+        loadContentOnly(section, code);
+    }
+
+    function loadContentOnly(section, code) {
+        console.log('loadContentOnly', section, code);
+        $('#content').load('content/' + section + '/' + code + '.html', function (response, status) {
             if (status == 'error') {
-                $('#content').load('content/fallback.html');
+                console.error('content loading failed');
+                $('#content').load('content/' + section + '/A.html');
             }
         });
         if (!$('#nav').hasClass('nav-small')) {
@@ -214,22 +234,14 @@ var schop = (function ($) {
         }
     }
 
-    function onAudioEnd() {
-        console.log('onAudioEnd');
-        $('.audioctrl').each(function (i, button) {
-            toggleAudioCtrlState($(button), false);
-        })
-    }
-
-    function toggleAudioCtrlState($button, on) {
+    function toggleButtonState($button, on) {
         $button.attr('src', $button.data(on ? 'src-on' : 'src-off'));
     }
 
     function init() {
-        audio.init(onAudioEnd);
+        audio.init();
 
         $('#nav').click(function (ev) {
-            //console.log('click nav', ev);
             if ($('#nav').hasClass('nav-small')) {
                 toggleNavigation();
             }
@@ -237,39 +249,36 @@ var schop = (function ($) {
         $('#nav-container').on('webkitTransitionEnd transitionend', function (ev) {
             //console.log('transitionEnd', ev.originalEvent.propertyName);
             if (ev.originalEvent.propertyName == 'height' && $('#nav').hasClass('nav-small')) {
-                //$('#contentpane').css('display', 'block');
                 $('#contentpane').addClass('active');
                 $('#nav').addClass('nav-small-finished');
             }
         });
 
-        $('#text-button').click(function (ev) {
-            console.log('text-button', ev);
-            showTextSection('.questions');
-            $('#controls-right').find('.button').hide();
-            if ($('#content').find('.infotext').length) {
-                $('#text-info-button').show();
-                $('#pdf-download-button').show();
+        $('#text-button').click(function () {
+            console.log('text-button', firstIndex, secondIndex);
+            toggleButtonState($(this), true);
+            toggleButtonState($('#music-button'), false);
+            $('#info-button').css('visibility', 'hidden');
+            loadContentOnly('questions', currentCode);
+            var title = nodetexts[firstIndex].complete;
+            if (secondIndex != null) {
+                title += ' / ' + nodetexts[secondIndex].complete;
             }
+            audio.loadPlaylist(speakerPlaylists[currentCode] ? speakerPlaylists[currentCode] : speakerPlaylists['A'], title);
         });
 
-        $('#music-button').click(function (ev) {
-            console.log('music-button', ev);
-            showTextSection('.questions');
-            $('#controls-right').find('.button').hide();
-            if ($('#content').find('.musicinfo').length) {
-                $('#music-info-button').show();
-            }
-            var playing = audio.play();
-            toggleAudioCtrlState($(this), playing);
+        $('#music-button').click(function () {
+            console.log('music-button');
+            toggleButtonState($(this), true);
+            toggleButtonState($('#text-button'), false);
+            loadContentOnly('questions', currentCode);
+            $('#info-button').css('visibility', 'visible');
+            audio.loadPlaylist(musicPlaylists[currentCode] ? musicPlaylists[currentCode] : musicPlaylists['A']);
         });
 
-        $('#text-info-button').click(function () {
-            showTextSection('.infotext');
-        });
-
-        $('#music-info-button').click(function () {
-            showTextSection('.musicinfo');
+        $('#info-button').click(function (ev) {
+            console.log('info-button', ev);
+            loadContentOnly('musikinfo', currentCode);
         });
 
         $.ajaxSetup({
@@ -278,20 +287,11 @@ var schop = (function ($) {
         });
     }
 
-    function showTextSection(selector) {
-        $('#content')
-            .children()
-            .hide()
-            .end()
-            .find(selector)
-            .show();
-    }
-
     return {
         'init': init,
         'render': renderNavigation,
         'calcLineWidths': calcLineWidths,
-        'load': loadContent
+        'load': loadContentWithTitle
     };
 })(jQuery);
 
@@ -315,3 +315,34 @@ var nodetexts = [
 ];
 
 var linewidths = [[227, 126], [209, 220], [209, 93], [195, 213], [192, 199], [209, 185], [253, 209], [218, 264]];
+
+var synthesisMapping = {
+    '0_1': '1',
+    '0_2': '2',
+    '0_3': '3',
+    '0_4': '4',
+    '0_5': '5',
+    '0_6': '6',
+    '0_7': '7',
+    '1_2': '8',
+    '1_3': '9',
+    '1_4': '10',
+    '1_5': '11',
+    '1_6': '12',
+    '1_7': '13',
+    '2_3': '14',
+    '2_4': '15',
+    '2_5': '16',
+    '2_6': '17',
+    '2_7': '18',
+    '3_4': '19',
+    '3_5': '20',
+    '3_6': '21',
+    '3_7': '22',
+    '4_5': '23',
+    '4_6': '24',
+    '4_7': '25',
+    '5_6': '26',
+    '5_7': '27',
+    '6_7': '28'
+};
