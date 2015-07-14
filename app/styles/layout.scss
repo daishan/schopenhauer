@@ -62,7 +62,8 @@ hr {
   transition: opacity 1s, fill 0.1s;
 
   @include font-playfair();
-  @include font(27, 30, 50);
+  //@include font(27, 30, 50);
+  @include font(35, 40, 50);
   //font-size: 28px;
   //font-weight: 400;
   //letter-spacing: 2px;
