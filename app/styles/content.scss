@@ -1,7 +1,7 @@
 @import 'variables';
 
 .content {
-  font-family: "Merriweather Sans", sans-serif;
+  @include font-merriweather();
   @include font(19, 15, 31);
 
   h1 {

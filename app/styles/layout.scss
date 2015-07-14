@@ -61,7 +61,7 @@ hr {
 .nav-text {
   transition: opacity 1s, fill 0.1s;
 
-  font-family: 'Playfair Display', serif;
+  @include font-playfair();
   @include font(27, 30, 50);
   //font-size: 28px;
   //font-weight: 400;
@@ -220,7 +220,7 @@ hr {
   }
 
   h2 {
-    font-family: 'Merriweather Sans', sans-serif;
+    @include font-merriweather();
     @include font(22, 120, 22);
     color: $orange;
   }
@@ -313,13 +313,13 @@ hr {
 
   .title-small {
     //font-size: 20px;
-    font-family: "Merriweather Sans", sans-serif;
+    @include font-merriweather();
     @include font(16, 15, 25)
   }
 
   .title-large {
     //font-size: 26px;
-    font-family: 'Playfair Display', serif;
+    @include font-playfair();
     @include font(26, 15, 25)
   }
 }

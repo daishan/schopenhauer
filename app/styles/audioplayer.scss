@@ -39,7 +39,7 @@
   }
 
   #playlist {
-    font-family: 'Merriweather Sans', sans-serif;
+    @include font-merriweather();
     @include font(17, 25, 28);
     text-align: center;
 

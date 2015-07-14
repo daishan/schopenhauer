@@ -13,3 +13,13 @@ $base-letter-spacing: 0.1rem / 1000;
   letter-spacing: $base-letter-spacing * $size * $kerning;
   line-height: $base-line-spacing * $line-spacing;
 }
+
+@mixin font-merriweather() {
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 300;
+}
+
+@mixin font-playfair() {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
