@@ -175,6 +175,7 @@ var schop = (function ($) {
             $('#contentpane').removeClass('active');
             resetAudioAndButtons();
         }
+        $('#nav-container').find('hr').removeClass('active');
         $nav.removeClass('nav-small-finished');
         $nav.toggleClass('nav-small');
         $nav.children().removeClass('nav-line-hover');
@@ -251,6 +252,7 @@ var schop = (function ($) {
             if (ev.originalEvent.propertyName == 'height' && $('#nav').hasClass('nav-small')) {
                 $('#contentpane').addClass('active');
                 $('#nav').addClass('nav-small-finished');
+                $('#nav-container').find('hr').addClass('active');
             }
         });
 
