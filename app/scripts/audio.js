@@ -1,13 +1,12 @@
 var audio = (function ($) {
     "use strict";
 
-    var stopCallback;
     var currentPlaylist;
     var titleOverride;
 
     var audioElement = $('audio').get(0);
 
-    function init(onStop) {
+    function init() {
         console.log('audio.init()');
         $('audio')
             .on('timeupdate', function (ev) {
@@ -16,7 +15,6 @@ var audio = (function ($) {
             })
             .on('ended', function (ev) {
                 console.log('ended', ev, this);
-                //stopCallback();
                 toggleButtonState($('#play-button'), false);
             });
 
@@ -30,8 +28,6 @@ var audio = (function ($) {
             console.log('seek', seekFraction, seekPos);
             audioElement.currentTime = seekPos;
         });
-
-        stopCallback = onStop;
     }
 
     function play() {
