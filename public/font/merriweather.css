@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Merriweather Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Merriweather Sans Light'), local('MerriweatherSans-Light'), url(merriweather-light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Merriweather Sans';
+    font-style: italic;
+    font-weight: 300;
+    src: local('Merriweather Sans Light Italic'), local('MerriweatherSans-LightItalic'), url(merriweather-light-italic.ttf) format('truetype');
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="vendor/reset.css">
+    <link rel="stylesheet" type="text/css" href="font/merriweather.css">
+    <link rel="stylesheet" type="text/css" href="font/playfair.css">
+    <link rel="stylesheet" type="text/css" href="vendor/jquery.svg/jquery.svg.css">
+    <link rel="stylesheet" type="text/css" href="app.css">
+    <title>Sound of Schopenhauer</title>
+</head>
+<body>
+<div id="main" class="main">
+    <div id="nav-container" class="nav-container">
+        <hr>
+        <svg id="nav" class="nav" viewBox="0 0 1600 1000"></svg>
+        <hr>
+    </div>
+    <div id="contentpane" class="contentpane">
+        <div id="contentpane-left" class="contentpane-left">
+            <div id="left-top"></div>
+            <div id="left-mid">
+                <div id="topic" class="topic">
+                    <div id="singleheadline" class="topic-single">
+                        <h1></h1>
+                        <h2></h2>
+                    </div>
+                    <div id="doubleheadline" class="topic-synthesis">
+                        <h1 id="headline1"></h1>
+                        <hr>
+                        <h1 id="headline2"></h1>
+                    </div>
+                </div>
+            </div>
+            <div id="left-bottom"></div>
+        </div>
+        <div id="contentpane-center" class="contentpane-center">
+            <div id="center-top">
+                <div id="title">
+                    <span class="title-small">Sound of</span><br>
+                    <span class="title-large">Schopenhauer</span>
+                </div>
+            </div>
+            <div id="center-mid">
+                <div id="buttons-center-1">
+                    <img class="button audioctrl" id="text-button" src="buttons/Sprecher.svg" data-src-off="buttons/Sprecher.svg"
+                         data-src-on="buttons/Sprecher-aktiv.svg" alt="Text" title="Text"/>
+                    <img class="button audioctrl" id="music-button" src="buttons/Musik.svg" data-src-off="buttons/Musik.svg"
+                         data-src-on="buttons/Musik-aktiv.svg"
+                         alt="Musik" title="Musik"/>
+                </div>
+                <div id="buttons-center-2">
+                    <img class="button" id="info-button" src="buttons/Info.svg" data-src-off="buttons/Info.svg" data-src-on="buttons/Info-aktiv.svg"
+                         alt="Musik" title="Musik" style="visibility: hidden;"/>
+                </div>
+                <div id="buttons-center-3">
+                    <img class="button audioctrl part-of-audio" id="play-button" src="buttons/Play.svg" data-src-off="buttons/Play.svg"
+                         data-src-on="buttons/Pause.svg" alt="Musik" title="Musik"/>
+                </div>
+            </div>
+            <div id="center-bottom">
+            </div>
+        </div>
+        <div id="contentpane-right" class="contentpane-right">
+            <div id="right-top"></div>
+            <div id="right-mid">
+                <div id="content-container" class="content-container">
+                    <div id="content-container2" class="content-container2">
+                        <div id="content" class="content"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="right-bottom"></div>
+        </div>
+    </div>
+    <div id="player-container">
+        <div id="player" class="part-of-audio">
+            <audio></audio>
+            <svg id="seekbar" viewBox="-1 0 201 20">
+                <line x1="0" y1="10" x2="200" y2="10" class="seekbar-line"></line>
+                <line x1="0" y1="0" x2="0" y2="20" class="seekbar-marker"></line>
+            </svg>
+            <ul id="playlist"></ul>
+        </div>
+    </div>
+    <div id="plus-menu">
+        <div id="menu-buttons">
+            <img class="button" id="hilfe-button" src="buttons/Hilfe.svg" alt="Hilfe" title="Hilfe"/>
+            <img class="button" id="pdf-button" src="buttons/PDF.svg" alt="Sprechertext als PDF" title="Sprechertext als PDF"/>
+            <img class="button" id="links-button" src="buttons/Links.svg" alt="Weitere Informationen" title="Weitere Informationen"/>
+            <img class="button" id="impressum-button" src="buttons/Impressum.svg" alt="Impressum" title="Impressum"/>
+        </div>
+        <img class="button" id="plus-button" src="buttons/Plus.svg" alt="FIXME" title="FIXME"/>
+    </div>
+</div>
+<script type="text/javascript" src="vendor/jquery/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="vendor/jquery.svg/jquery.svg.js"></script>
+<script type="text/javascript" src="vendor/jquery.svgdom/jquery.svgdom.js"></script>
+<script type="text/javascript" src="app.js" charset="utf-8"></script>
+</body>
+</html>
