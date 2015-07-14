@@ -44,6 +44,9 @@ var audio = (function ($) {
     function updateSeekBar(played) {
         var width = 200;
         var pos = played * width;
+        if (isNaN(pos)) {
+            pos = 0;
+        }
         $('.seekbar-marker')
             .attr('x1', pos)
             .attr('x2', pos);
