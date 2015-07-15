@@ -192,7 +192,7 @@ var schop = (function ($) {
         audio.reset();
         toggleButtonState($('#text-button'), false);
         toggleButtonState($('#music-button'), false);
-        $('#info-button').css('visibility', 'hidden');
+        $('#info-button').removeClass('visible');
     }
 
     function toggleSingleTopic(i) {
@@ -228,6 +228,7 @@ var schop = (function ($) {
         showSingleHeadline(title);
         resetAudioAndButtons();
         loadContentOnly(section, code);
+        $('#buttons-center-1').removeClass('visible');
     }
 
     function loadContentOnly(section, code) {
@@ -241,6 +242,7 @@ var schop = (function ($) {
         if (!$('#nav').hasClass('nav-small')) {
             toggleNavigation();
         }
+        $('#buttons-center-1').addClass('visible');
     }
 
     function toggleButtonState($button, on) {
@@ -268,7 +270,7 @@ var schop = (function ($) {
             console.log('text-button', firstIndex, secondIndex);
             toggleButtonState($(this), true);
             toggleButtonState($('#music-button'), false);
-            $('#info-button').css('visibility', 'hidden');
+            $('#info-button').removeClass('visible');
             loadContentOnly('questions', currentCode);
             var title = nodetexts[firstIndex].complete;
             if (secondIndex != null) {
@@ -282,7 +284,7 @@ var schop = (function ($) {
             toggleButtonState($(this), true);
             toggleButtonState($('#text-button'), false);
             loadContentOnly('questions', currentCode);
-            $('#info-button').css('visibility', 'visible');
+            $('#info-button').addClass('visible');
             audio.loadPlaylist(musicPlaylists[currentCode] ? musicPlaylists[currentCode] : musicPlaylists['A']);
         });
 

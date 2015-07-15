@@ -274,14 +274,6 @@ hr {
   }
 }
 
-//.contentpane-center {
-//  position: relative;
-//  display: flex;
-//  flex-direction: column;
-//  justify-content: space-between;
-//  align-items: center;
-//}
-
 #center-mid {
   display: flex;
   flex-direction: column;
@@ -294,10 +286,23 @@ hr {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  visibility: hidden;
+
+  &.visible {
+    visibility: visible;
+  }
+}
+
+#info-button {
+  visibility: hidden;
+
+  &.visible {
+    visibility: visible;
+  }
 }
 
 #buttons-center-3 {
-  height: 3 * $button-size;
+  height: 3 * $button-size; /* counterbalance 2 buttons and one button whitespace in #buttons-center-1 */
 
   display: flex;
   flex-direction: column;
