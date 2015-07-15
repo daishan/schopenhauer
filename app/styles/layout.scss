@@ -12,9 +12,8 @@ html {
 }
 
 body {
-  height: 100vh;
-  /* this shouldn't be necessary, but it is!? */
-  box-shadow: inset $orange 0 0 0 0.2rem;
+  height: 100vh; /* this shouldn't be necessary, but it is!? */
+  box-shadow: inset $orange 0 0 0 0.35rem;
   overflow: hidden;
 }
 
