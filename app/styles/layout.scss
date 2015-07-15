@@ -1,6 +1,6 @@
 @import 'variables';
 
-$nav-small-height: 7rem;
+$nav-small-height: 5.5rem;
 $hr-height: 0.1rem;
 
 $aspect-ratio-x: 4;
@@ -317,7 +317,7 @@ hr {
   //font-weight: 400;
   //letter-spacing: 2px;
 
-  padding-top: ($nav-small-height/2) + 2rem;
+  padding-top: ($nav-small-height / 2) + 1rem;
 
   .title-small {
     //font-size: 20px;
