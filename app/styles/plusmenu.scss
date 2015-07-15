@@ -14,10 +14,11 @@ $duration: 0.3s;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    bottom: 2 * $button-height;
+    bottom: 2 * $button-size;
+    left: - ($button-size - $button-size-small) / 2;
 
     .button {
-      margin-top: $button-height;
+      margin-top: $button-size;
     }
   }
 

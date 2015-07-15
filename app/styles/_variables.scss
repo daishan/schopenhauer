@@ -2,7 +2,8 @@ $orange: rgb(248, 164, 120);
 $light-gray: rgb(230, 230, 230);
 $dark-gray: rgb(128, 128, 128);
 
-$button-height: 3.5rem;
+$button-size: 3.5rem;
+$button-size-small: $button-size * (42/58);
 
 $base-font-size: 0.09rem;
 $base-line-spacing: 0.1rem;

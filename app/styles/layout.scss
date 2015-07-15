@@ -263,9 +263,14 @@ hr {
 }
 
 .button {
-  width: $button-height;
-  height: $button-height;
+  width: $button-size;
+  height: $button-size;
   cursor: pointer;
+
+  &.button-small {
+    height: $button-size-small;
+    width: $button-size-small;
+  }
 }
 
 //.contentpane-center {
@@ -291,7 +296,7 @@ hr {
 }
 
 #buttons-center-3 {
-  height: 3 * $button-height;
+  height: 3 * $button-size;
 
   display: flex;
   flex-direction: column;
@@ -300,7 +305,7 @@ hr {
 }
 
 #text-button {
-  margin-bottom: $button-height;
+  margin-bottom: $button-size;
 }
 
 #title {
