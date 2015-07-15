@@ -209,6 +209,7 @@ hr {
   //font-size: 4.5rem;
   //line-height: 4.3rem;
   //letter-spacing: 0.08rem;
+  @include font-playfair();
   @include font(61, 20, 62);
 }
 
