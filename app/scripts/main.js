@@ -233,7 +233,10 @@ var schop = (function ($) {
 
     function loadContentOnly(section, code) {
         console.log('loadContentOnly', section, code);
-        $('#content').load('content/' + section + '/' + code + '.html', function (response, status) {
+        $('#content')
+            .removeClass('musicinfo special questions')
+            .addClass(section)
+            .load('content/' + section + '/' + code + '.html', function (response, status) {
             if (status == 'error') {
                 console.error('content loading failed');
                 $('#content').load('content/' + section + '/A.html');
