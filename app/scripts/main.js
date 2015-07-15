@@ -320,7 +320,7 @@ var nodetexts = [
     {complete: 'Metaphysik des Schönen', lines: ['Metaphysik', 'des Schönen'], align: 'left', offset: {x: 30, y: 0}, sub: 'FIXME'},
     {complete: 'Bejahung & Verneinung', lines: ['Bejahung &', 'Verneinung'], align: 'center', offset: {x: 0, y: 60}, sub: 'FIXME'},
     {complete: 'Schlechte & gute Musik', lines: ['Schlechte &', 'gute Musik'], align: 'right', offset: {x: -30, y: 0}, sub: 'FIXME'},
-    {complete: 'Entzweihung & Versöhnung', lines: ['Entzweihung &', 'Versöhnung'], align: 'right', offset: {x: -30, y: 0}, sub: 'FIXME'},
+    {complete: 'Entzweiung & Versöhnung', lines: ['Entzweiung &', 'Versöhnung'], align: 'right', offset: {x: -30, y: 0}, sub: 'FIXME'},
     {complete: 'Klassische & populäre Musik', lines: ['Klassische &', 'populäre Musik'], align: 'right', offset: {x: -30, y: 0}, sub: 'FIXME'}
 ];
 
