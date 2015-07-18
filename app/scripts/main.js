@@ -319,14 +319,14 @@ jQuery(document).ready(function () {
 });
 
 var nodetexts = [
-    {complete: 'Der Satz vom Grunde', lines: ['Der Satz vom', 'Grunde'], align: 'center', offset: {x: 0, y: -60}, sub: 'FIXME'},
-    {complete: 'Die Welt als Vorstellung', lines: ['Die Welt als', 'Vorstellung'], align: 'left', offset: {x: 30, y: 0}, sub: 'Erkenntnistheorie'},
-    {complete: 'Die Welt als Wille', lines: ['Die Welt als', 'Wille'], align: 'left', offset: {x: 30, y: 0}, sub: 'FIXME'},
-    {complete: 'Metaphysik des Schönen', lines: ['Metaphysik', 'des Schönen'], align: 'left', offset: {x: 30, y: 0}, sub: 'FIXME'},
-    {complete: 'Bejahung & Verneinung', lines: ['Bejahung &', 'Verneinung'], align: 'center', offset: {x: 0, y: 60}, sub: 'FIXME'},
-    {complete: 'Schlechte & gute Musik', lines: ['Schlechte &', 'gute Musik'], align: 'right', offset: {x: -30, y: 0}, sub: 'FIXME'},
-    {complete: 'Entzweiung & Versöhnung', lines: ['Entzweiung &', 'Versöhnung'], align: 'right', offset: {x: -30, y: 0}, sub: 'FIXME'},
-    {complete: 'Klassische & populäre Musik', lines: ['Klassische &', 'populäre Musik'], align: 'right', offset: {x: -30, y: 0}, sub: 'FIXME'}
+    {complete: 'Der Satz vom Grunde', lines: ['Der Satz vom', 'Grunde'], align: 'center', offset: {x: 0, y: -60}, sub: 'Kausalitätsgesetze'},
+    {complete: 'Die Welt als Vorstellung', lines: ['Die Welt als', 'Vorstellung'], align: 'left', offset: {x: 30, y: 0}, sub: 'Erkenntnis- & Wissenstheorie'},
+    {complete: 'Die Welt als Wille', lines: ['Die Welt als', 'Wille'], align: 'left', offset: {x: 30, y: 0}, sub: 'Metaphysik'},
+    {complete: 'Metaphysik des Schönen', lines: ['Metaphysik', 'des Schönen'], align: 'left', offset: {x: 30, y: 0}, sub: 'Ästhetik'},
+    {complete: 'Bejahung & Verneinung', lines: ['Bejahung &', 'Verneinung'], align: 'center', offset: {x: 0, y: 60}, sub: 'Ethik'},
+    {complete: 'Schlechte & gute Musik', lines: ['Schlechte &', 'gute Musik'], align: 'right', offset: {x: -30, y: 0}, sub: 'Musikwertung'},
+    {complete: 'Entzweiung & Versöhnung', lines: ['Entzweiung &', 'Versöhnung'], align: 'right', offset: {x: -30, y: 0}, sub: 'Musiktheorie'},
+    {complete: 'Klassische & populäre Musik', lines: ['Klassische &', 'populäre Musik'], align: 'right', offset: {x: -30, y: 0}, sub: 'Musiktrivia'}
 ];
 
 var linewidths = [[227, 126], [209, 220], [209, 93], [195, 213], [192, 199], [209, 185], [253, 209], [218, 264]];
