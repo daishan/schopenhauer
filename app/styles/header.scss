@@ -7,6 +7,7 @@ $title-downshift: 5rem;
   text-transform: uppercase;
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
+  user-select: none;
 
   &.visible {
     opacity: 1;
