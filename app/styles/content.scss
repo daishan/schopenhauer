@@ -7,7 +7,7 @@
   h1 {
     color: $orange;
     text-transform: capitalize;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
 
   h2 {
@@ -17,14 +17,18 @@
     margin-top: 3.5rem;
   }
 
-  p {
+  p, ol {
     color: $dark-gray;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
 
-    &.lyrics {
-      text-align: center;
-      white-space: pre-line;
-    }
+  p.lyrics {
+    text-align: center;
+    white-space: pre-line;
+  }
+
+  ol {
+    list-style: decimal inside none;
   }
 
   q {
