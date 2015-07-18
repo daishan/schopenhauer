@@ -1,25 +1,38 @@
 var plusmenu = (function ($, schop) {
     "use strict";
 
+    var $menuButtons = $('#menu-buttons');
+
     function init() {
         console.log('plusmenu.init()');
         $('#plus-button')
-            .on('click', function () {
+            .click(function () {
                 console.log('#plus-button click');
-                $('#menu-buttons').find('.button').toggleClass('active');
+                $menuButtons.find('.button').toggleClass('active');
             });
 
         $('#impressum-button').click(function () {
             schop.load("Impressum", 'special', 'impressum');
-            $('#menu-buttons').find('.button').removeClass('active');
+            close();
         });
 
         $('#links-button').click(function () {
             schop.load('Weiterführend', 'special', 'sources');
-            $('#menu-buttons').find('.button').removeClass('active');
+            close();
         });
 
-        $('#help-button').click(help.activate);
+        $('#pdf-button').click(function () {
+            close();
+        });
+
+        $('#help-button').click(function () {
+            help.activate(close);
+        });
+    }
+
+    function close() {
+        console.log('plusmenu.close()');
+        $menuButtons.find('.button').removeClass('active');
     }
 
     return {
