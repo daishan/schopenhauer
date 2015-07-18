@@ -8,6 +8,10 @@
     color: $orange;
     text-transform: capitalize;
     margin-bottom: 2rem;
+
+    &.nonfirst {
+      padding-top: 2rem;
+    }
   }
 
   h2 {
@@ -34,6 +38,11 @@
   q {
     font-style: italic;
     quotes: none;
+  }
+
+  a {
+    color: $dark-gray;
+    text-decoration: none;
   }
 
   &.questions p {
