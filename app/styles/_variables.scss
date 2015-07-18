@@ -2,11 +2,12 @@
 
 // --- colors
 $orange: rgb(248, 164, 120);
-$light-gray: rgb(230, 230, 230);
+$light-gray-value: 230;
+$light-gray: rgb($light-gray-value, $light-gray-value, $light-gray-value);
 $dark-gray: rgb(128, 128, 128);
 
 @if $debug {
-  $light-gray: rgb(230, 0, 230);
+  $light-gray: rgb($light-gray-value, 0, $light-gray-value);
 }
 
 // --- buttons

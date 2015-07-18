@@ -8,6 +8,10 @@ $duration: 0.3s;
   bottom: 4vh;
   left: 10vw;
 
+  #plus-button {
+    opacity: 1 - $light-gray-value / 255;
+  }
+
   #menu-buttons {
     position: absolute;
     display: flex;
