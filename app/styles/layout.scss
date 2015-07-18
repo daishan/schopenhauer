@@ -53,9 +53,6 @@ hr {
   @include font-playfair();
   //@include font(27, 30, 50);
   @include font(27 * $nav-font-size-correction, 40, 50);
-  //font-size: 28px;
-  //font-weight: 400;
-  //letter-spacing: 2px;
   text-transform: uppercase;
   fill: $dark-gray;
   opacity: 100;
@@ -144,7 +141,6 @@ hr {
   width: 40%;
   height: 100%;
   float: left;
-  //margin-left: 5%;
 }
 
 .contentpane-center {
@@ -156,7 +152,6 @@ hr {
   width: 40%;
   height: 100%;
   float: right;
-  //margin-right: 5%;
 }
 
 #left-top, #center-top, #right-top {
@@ -186,9 +181,6 @@ hr {
 
 .topic h1 {
   margin: 0;
-  //font-size: 4.5rem;
-  //line-height: 4.3rem;
-  //letter-spacing: 0.08rem;
   @include font-playfair();
   @include font(61, 20, 62);
 }
