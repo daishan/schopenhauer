@@ -25,50 +25,6 @@ hr {
   height: 98vh;
 }
 
-.nav-line {
-  transition-duration: 0.1s;
-  transition-timing-function: linear;
-
-  stroke: $light-gray;
-  stroke-width: $nav-line-stroke-width;
-}
-
-.nav-line-hover {
-  stroke: $orange;
-  stroke-width: $nav-line-stroke-width * 2;
-}
-
-.nav-line-clickable {
-  stroke-width: 20;
-  stroke: rgb(255, 255, 255);
-  opacity: 0;
-  cursor: pointer;
-}
-
-.nav-text {
-  transition: opacity 1s, fill 0.1s;
-
-  @include font-playfair();
-  //@include font(27, 30, 50);
-  @include font(27 * $nav-font-size-correction, 40, 50);
-  text-transform: uppercase;
-  fill: $dark-gray;
-  opacity: 100;
-  cursor: pointer;
-
-  -moz-user-select: -moz-none;
-  -ms-user-select: none;
-  user-select: none;
-
-  &:hover {
-    fill: $orange;
-  }
-}
-
-.nav-small .nav-text {
-  opacity: 0;
-}
-
 .nav {
   transition-duration: 1s;
   width: 70%;
@@ -81,22 +37,61 @@ hr {
   position: relative;
 
   &.nav-small {
-    transition-duration: 1s;
     margin-top: 0;
     height: $nav-small-height;
     width: $nav-small-height * $aspect-ratio;
     cursor: pointer;
+
+    .nav-line {
+      transition-duration: 1s;
+      transition-timing-function: ease-in;
+      stroke-width: 7;
+    }
+
+    .nav-text {
+      opacity: 0;
+    }
+  }
+
+  .nav-line {
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+
+    stroke: $light-gray;
+    stroke-width: $nav-line-stroke-width;
+
+    &.nav-line-hover {
+      stroke: $orange;
+      stroke-width: $nav-line-stroke-width * 2;
+    }
+  }
+
+  .nav-line-clickable {
+    stroke-width: 20;
+    stroke: rgb(255, 255, 255);
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .nav-text {
+    transition: opacity 1s, fill 0.1s;
+
+    @include font-playfair();
+    @include font(27 * $nav-font-size-correction, 40, 50);
+    text-transform: uppercase;
+    fill: $dark-gray;
+    opacity: 100;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+      fill: $orange;
+    }
   }
 
   @if $debug {
     border: 1px solid aquamarine;
   }
-}
-
-.nav-small .nav-line {
-  transition-duration: 1s;
-  transition-timing-function: ease-in;
-  stroke-width: 7;
 }
 
 .contentpane {
