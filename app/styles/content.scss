@@ -37,6 +37,8 @@
   }
 
   &.questions p {
+    @include font(36, 6, 47);
     @include font-playfair();
+    font-style: italic;
   }
 }

@@ -5,8 +5,8 @@ $dark-gray: rgb(128, 128, 128);
 $button-size: 3.5rem;
 $button-size-small: $button-size * (42/58);
 
-$base-font-size: 0.08rem;
-$base-line-spacing: 0.1rem;
+$base-font-size: 0.065rem;
+$base-line-spacing: 0.1rem * 0.7;
 $base-letter-spacing: 0.1rem / 1000;
 
 @mixin font($size, $kerning, $line-spacing) {
