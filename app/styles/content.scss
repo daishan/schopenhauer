@@ -50,4 +50,8 @@
     @include font-playfair();
     font-style: italic;
   }
+
+  &.special h1 {
+    text-transform: uppercase;
+  }
 }
