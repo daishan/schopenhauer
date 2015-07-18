@@ -5,7 +5,6 @@ var schop = (function ($) {
     var firstIndex, secondIndex;
 
     var $nav = $('#nav');
-    var $navContainer = $('#nav-container');
     var $header = $('#header');
     var $textButton = $('#text-button');
     var $musicButton = $('#music-button');
@@ -197,7 +196,6 @@ var schop = (function ($) {
         $nav.removeClass('nav-small-finished');
         $nav.toggleClass('nav-small');
         $nav.children().removeClass('nav-line-hover');
-        $navContainer.toggleClass('nav-small', $nav.hasClass('nav-small'));
     }
 
     function resetAudioAndButtons() {
@@ -274,7 +272,7 @@ var schop = (function ($) {
                 toggleNavigation();
             }
         });
-        $navContainer.on('webkitTransitionEnd transitionend', function (ev) {
+        $nav.on('webkitTransitionEnd transitionend', function (ev) {
             if (ev.originalEvent.propertyName == 'height') {
                 console.log('transitionEnd', ev.originalEvent.propertyName);
                 if ($nav.hasClass('nav-small')) {
