@@ -246,6 +246,8 @@ var schop = (function ($) {
                 if (status == 'error') {
                     console.error('content loading failed');
                     $('#content').load('content/' + section + '/A.html');
+                } else {
+                    setupFigureSounds();
                 }
             });
         if (!$nav.hasClass('nav-small')) {
@@ -323,6 +325,13 @@ var schop = (function ($) {
 
     function isMusicSelected() {
         return $musicButton.attr('src') == $musicButton.data('src-on');
+    }
+
+    function setupFigureSounds() {
+        $('#content').find('figure.with-sound').children('img')
+            .click(function () {
+                $(this).siblings('audio').get(0).play();
+            });
     }
 
     return {

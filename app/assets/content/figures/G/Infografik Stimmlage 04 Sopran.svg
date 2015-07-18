@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1082 147" enable-background="new 0 0 1082 147" xml:space="preserve">
+<g id="Klaviatur" display="none">
+</g>
+<g id="Notenschlüssel" display="none">
+</g>
+<g id="reine_Anschauung" display="none">
+</g>
+<g id="Erkenntnis" display="none">
+</g>
+<g id="Dur_x2F_Moll">
+</g>
+<g id="Obertöne">
+</g>
+<g id="Stimmlagen">
+	<g>
+		<polygon fill="#FFFFFF" points="1081,101 1081,1 1057,1 1057,101.2 1057,146 1072.2,146 1081,146 1081,101 		"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="1081" y1="1" x2="1081" y2="146"/>
+		<polygon fill="#FFFFFF" points="21,101 21,1 1,1 1,101 1,101 1,146 7,146 21,146 25,146 25,101 		"/>
+		<polygon fill="#FFFFFF" points="34,1 34,101 25,101 25,146 34,146 49,146 49,101.1 49,1 		"/>
+		<rect x="21" y="1" fill="#808080" width="13" height="100"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="25" y1="101" x2="25" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="1" y1="1" x2="1" y2="146"/>
+		<polygon fill="#FFFFFF" points="64,101 64,1 49,1 49,100.7 49,146 64.2,146 73,146 73,101 		"/>
+		<polygon fill="#FFFFFF" points="93,101 93,1 77,1 77,101 73,101 73,146 77.2,146 93.2,146 97,146 97,101 		"/>
+		<polygon fill="#FFFFFF" points="106,1 106,101 97,101 97,146 106.2,146 121,146 121,100.7 121,1 		"/>
+		<polygon fill="#FFFFFF" points="135,101 135,1 121,1 121,100.7 121,146 135.2,146 145,146 145,101 		"/>
+		<polygon fill="#FFFFFF" points="162,101 162,1 148,1 148,101 145,101 145,146 148.2,146 162.2,146 169,146 169,101 		"/>
+		<polygon fill="#FFFFFF" points="189,101 189,1 175,1 175,101 169,101 169,146 175,146 189,146 193,146 193,101 		"/>
+		<polygon fill="#FFFFFF" points="202,1 202,101 193,101 193,146 202,146 217,146 217,100.6 217,1 		"/>
+		<g>
+			<rect x="65" y="2" fill="#808080" width="11" height="98"/>
+			<path fill="#808080" d="M75,3v96h-9V3H75 M77,1H64v100h13V1L77,1z"/>
+		</g>
+		<g>
+			<rect x="94" y="2" fill="#808080" width="11" height="98"/>
+			<path fill="#808080" d="M104,3v96h-9V3H104 M106,1H93v100h13V1L106,1z"/>
+		</g>
+		<g>
+			<rect x="136" y="2" fill="#808080" width="11" height="98"/>
+			<path fill="#808080" d="M146,3v96h-9V3H146 M148,1h-13v100h13V1L148,1z"/>
+		</g>
+		<g>
+			<rect x="163" y="2" fill="#808080" width="11" height="98"/>
+			<g>
+				<path fill="#808080" d="M173,3v96h-9V3H173 M175,1h-13v100h13V1L175,1z"/>
+			</g>
+		</g>
+		<g>
+			<rect x="190" y="2" fill="#808080" width="11" height="98"/>
+			<path fill="#808080" d="M200,3v96h-9V3H200 M202,1h-13v100h13V1L202,1z"/>
+		</g>
+		<polygon fill="#FFFFFF" points="232,101 232,1 217,1 217,100.7 217,146 232.2,146 241,146 241,101 		"/>
+		<polygon fill="#FFFFFF" points="261,101 261,1 245,1 245,101 241,101 241,146 245.2,146 261.2,146 265,146 265,101 		"/>
+		<polygon fill="#FFFFFF" points="274,1 274,101 265,101 265,146 274.2,146 289,146 289,100.7 289,1 		"/>
+		<polygon fill="#FFFFFF" points="303,101 303,1 289,1 289,100.7 289,146 303.2,146 313,146 313,101 		"/>
+		<polygon fill="#FFFFFF" points="330,101 330,1 316,1 316,101 313,101 313,146 316.2,146 330.2,146 337,146 337,101 		"/>
+		<polygon fill="#FFFFFF" points="357,101 357,1 343,1 343,101 337,101 337,146 343,146 357,146 361,146 361,101 		"/>
+		<polygon fill="#FFFFFF" points="370,1 370,101 361,101 361,146 370,146 385,146 385,100.6 385,1 		"/>
+		<g>
+			<rect x="233" y="2" fill="#808080" width="11" height="98"/>
+			<path fill="#808080" d="M243,3v96h-9V3H243 M245,1h-13v100h13V1L245,1z"/>
+		</g>
+		<g>
+			<rect x="262" y="2" fill="#808080" width="11" height="98"/>
+			<path fill="#808080" d="M272,3v96h-9V3H272 M274,1h-13v100h13V1L274,1z"/>
+		</g>
+		<g>
+			<rect x="304" y="2" fill="#808080" width="11" height="98"/>
+			<path fill="#808080" d="M314,3v96h-9V3H314 M316,1h-13v100h13V1L316,1z"/>
+		</g>
+		<g>
+			<rect x="331" y="2" fill="#808080" width="11" height="98"/>
+			<path fill="#808080" d="M341,3v96h-9V3H341 M343,1h-13v100h13V1L343,1z"/>
+		</g>
+		<g>
+			<rect x="358" y="2" fill="#808080" width="11" height="98"/>
+			<path fill="#808080" d="M368,3v96h-9V3H368 M370,1h-13v100h13V1L370,1z"/>
+		</g>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="73" y1="101" x2="73" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="97" y1="101" x2="97" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="145" y1="101" x2="145" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="169" y1="101" x2="169" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="241" y1="101" x2="241" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="265" y1="101" x2="265" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="313" y1="101" x2="313" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="337" y1="101" x2="337" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="361" y1="101" x2="361" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="193" y1="101" x2="193" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="121" y1="1" x2="121" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="49" y1="1" x2="49" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="217" y1="1" x2="217" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="289" y1="1" x2="289" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="385" y1="1" x2="385" y2="146"/>
+		
+			<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="1" y1="1" x2="385" y2="1"/>
+		
+			<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="385" y1="146" x2="1" y2="146"/>
+		<polygon fill="#FFFFFF" points="400,101 400,1 385,1 385,100.7 385,146 400.2,146 409,146 409,101 		"/>
+		<polygon fill="#FFFFFF" points="429,101 429,1 413,1 413,101 409,101 409,146 413.2,146 429.2,146 433,146 433,101 		"/>
+		<polygon fill="#FFFFFF" points="442,1 442,101 433,101 433,146 442.2,146 457,146 457,100.7 457,1 		"/>
+		<polygon fill="#FFFFFF" points="471,101 471,1 457,1 457,100.7 457,146 471.2,146 481,146 481,101 		"/>
+		<polygon fill="#FFFFFF" points="498,101 498,1 484,1 484,101 481,101 481,146 484.2,146 498.2,146 505,146 505,101 		"/>
+		<polygon fill="#FFFFFF" points="525,101 525,1 511,1 511,101 505,101 505,146 511,146 525,146 529,146 529,101 		"/>
+		<polygon fill="#FFFFFF" points="538,1 538,101 529,101 529,146 538,146 553,146 553,100.6 553,1 		"/>
+		<g>
+			<rect x="401" y="2" fill="#808080" width="11" height="98"/>
+			<path fill="#808080" d="M411,3v96h-9V3H411 M413,1h-13v100h13V1L413,1z"/>
+		</g>
+		<g>
+			<rect x="430" y="2" fill="#808080" width="11" height="98"/>
+			<path fill="#808080" d="M440,3v96h-9V3H440 M442,1h-13v100h13V1L442,1z"/>
+		</g>
+		<g>
+			<rect x="472" y="2" fill="#808080" width="11" height="98"/>
+			<path fill="#808080" d="M482,3v96h-9V3H482 M484,1h-13v100h13V1L484,1z"/>
+		</g>
+		<g>
+			<rect x="499" y="2" fill="#808080" width="11" height="98"/>
+			<path fill="#808080" d="M509,3v96h-9V3H509 M511,1h-13v100h13V1L511,1z"/>
+		</g>
+		<g>
+			<rect x="526" y="2" fill="#808080" width="11" height="98"/>
+			<path fill="#808080" d="M536,3v96h-9V3H536 M538,1h-13v100h13V1L538,1z"/>
+		</g>
+		<polygon fill="#F8A478" points="568,101 568,1 553,1 553,100.7 553,146 568.2,146 577,146 577,101 		"/>
+		<polygon fill="#F8A478" points="597,101 597,1 581,1 581,101 577,101 577,146 581.2,146 597.2,146 601,146 601,101 		"/>
+		<polygon fill="#F8A478" points="610,1 610,101 601,101 601,146 610.2,146 625,146 625,100.7 625,1 		"/>
+		<polygon fill="#F8A478" points="639,101 639,1 625,1 625,100.7 625,146 639.2,146 649,146 649,101 		"/>
+		<polygon fill="#F8A478" points="666,101 666,1 652,1 652,101 649,101 649,146 652.2,146 666.2,146 673,146 673,101 		"/>
+		<polygon fill="#F8A478" points="693,101 693,1 679,1 679,101 673,101 673,146 679,146 693,146 697,146 697,101 		"/>
+		<polygon fill="#F8A478" points="706,1 706,101 697,101 697,146 706,146 721,146 721,100.6 721,1 		"/>
+		<rect x="568" y="1" fill="#F8A478" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" width="13" height="100"/>
+		<rect x="597" y="1" fill="#F8A478" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" width="13" height="100"/>
+		<rect x="639" y="1" fill="#F8A478" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" width="13" height="100"/>
+		<rect x="666" y="1" fill="#F8A478" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" width="13" height="100"/>
+		<rect x="693" y="1" fill="#F8A478" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" width="13" height="100"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="409" y1="101" x2="409" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="433" y1="101" x2="433" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="481" y1="101" x2="481" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="505" y1="101" x2="505" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="577" y1="101" x2="577" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="601" y1="101" x2="601" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="649" y1="101" x2="649" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="673" y1="101" x2="673" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="697" y1="101" x2="697" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="529" y1="101" x2="529" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="457" y1="1" x2="457" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="553" y1="1" x2="553" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="625" y1="1" x2="625" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="721" y1="1" x2="721" y2="146"/>
+		
+			<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="385" y1="1" x2="721" y2="1"/>
+		
+			<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="721" y1="146" x2="385" y2="146"/>
+		<polygon fill="#F8A478" points="736,101 736,1 721,1 721,100.7 721,146 736.2,146 745,146 745,101 		"/>
+		<polygon fill="#F8A478" points="765,101 765,1 749,1 749,101 745,101 745,146 749.2,146 765.2,146 769,146 769,101 		"/>
+		<polygon fill="#F8A478" points="778,1 778,101 769,101 769,146 778.2,146 793,146 793,100.7 793,1 		"/>
+		<polygon fill="#F8A478" points="807,101 807,1 793,1 793,100.7 793,146 807.2,146 817,146 817,101 		"/>
+		<polygon fill="#F8A478" points="834,101 834,1 820,1 820,101 817,101 817,146 820.2,146 834.2,146 841,146 841,101 		"/>
+		<polygon fill="#F8A478" points="861,101 861,1 847,1 847,101 841,101 841,146 847,146 861,146 865,146 865,101 		"/>
+		<polygon fill="#FFFFFF" points="874,1 874,101 865,101 865,146 874,146 889,146 889,100.6 889,1 		"/>
+		<rect x="736" y="1" fill="#F8A478" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" width="13" height="100"/>
+		<rect x="765" y="1" fill="#F8A478" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" width="13" height="100"/>
+		<rect x="807" y="1" fill="#F8A478" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" width="13" height="100"/>
+		<rect x="834" y="1" fill="#F8A478" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" width="13" height="100"/>
+		<g>
+			<rect x="862" y="2" fill="#808080" width="11" height="98"/>
+			<path fill="#808080" d="M872,3v96h-9V3H872 M874,1h-13v100h13V1L874,1z"/>
+		</g>
+		<polygon fill="#FFFFFF" points="904,101 904,1 889,1 889,100.7 889,146 904.2,146 913,146 913,101 		"/>
+		<polygon fill="#FFFFFF" points="933,101 933,1 917,1 917,101 913,101 913,146 917.2,146 933.2,146 937,146 937,101 		"/>
+		<polygon fill="#FFFFFF" points="946,1 946,101 937,101 937,146 946.2,146 961,146 961,100.7 961,1 		"/>
+		<polygon fill="#FFFFFF" points="975,101 975,1 961,1 961,100.7 961,146 975.2,146 985,146 985,101 		"/>
+		<polygon fill="#FFFFFF" points="1002,101 1002,1 988,1 988,101 985,101 985,146 988.2,146 1002.2,146 1009,146 1009,101 		"/>
+		<polygon fill="#FFFFFF" points="1029,101 1029,1 1015,1 1015,101 1009,101 1009,146 1015,146 1029,146 1033,146 1033,101 		"/>
+		<polygon fill="#FFFFFF" points="1042,1 1042,101 1033,101 1033,146 1042,146 1057,146 1057,100.6 1057,1 		"/>
+		<g>
+			<rect x="905" y="2" fill="#808080" width="11" height="98"/>
+			<path fill="#808080" d="M915,3v96h-9V3H915 M917,1h-13v100h13V1L917,1z"/>
+		</g>
+		<g>
+			<rect x="934" y="2" fill="#808080" width="11" height="98"/>
+			<path fill="#808080" d="M944,3v96h-9V3H944 M946,1h-13v100h13V1L946,1z"/>
+		</g>
+		<g>
+			<rect x="976" y="2" fill="#808080" width="11" height="98"/>
+			<path fill="#808080" d="M986,3v96h-9V3H986 M988,1h-13v100h13V1L988,1z"/>
+		</g>
+		<g>
+			<rect x="1003" y="2" fill="#808080" width="11" height="98"/>
+			<path fill="#808080" d="M1013,3v96h-9V3H1013 M1015,1h-13v100h13V1L1015,1z"/>
+		</g>
+		<g>
+			<rect x="1030" y="2" fill="#808080" width="11" height="98"/>
+			<path fill="#808080" d="M1040,3v96h-9V3H1040 M1042,1h-13v100h13V1L1042,1z"/>
+		</g>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="745" y1="101" x2="745" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="769" y1="101" x2="769" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="817" y1="101" x2="817" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="841" y1="101" x2="841" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="913" y1="101" x2="913" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="937" y1="101" x2="937" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="985" y1="101" x2="985" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="1009" y1="101" x2="1009" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="1033" y1="101" x2="1033" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="865" y1="101" x2="865" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="793" y1="1" x2="793" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="721" y1="1" x2="721" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="889" y1="1" x2="889" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="961" y1="1" x2="961" y2="146"/>
+		<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-miterlimit="10" x1="1057" y1="1" x2="1057" y2="146"/>
+		
+			<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="1081" y1="146" x2="721" y2="146"/>
+		
+			<line fill="none" stroke="#E6E6E6" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="721" y1="1" x2="1081" y2="1"/>
+	</g>
+</g>
+<g id="Orchester">
+</g>
+</svg>

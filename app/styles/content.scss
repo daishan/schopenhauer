@@ -3,6 +3,7 @@
 .content {
   @include font-merriweather();
   @include font(19, 15, 31);
+  color: $dark-gray;
 
   h1 {
     color: $orange;
@@ -15,14 +16,11 @@
   }
 
   h2 {
-    color: $light-gray;
-    text-transform: capitalize;
-    text-align: center;
+    color: $orange;
     margin-top: 3.5rem;
   }
 
   p, ol {
-    color: $dark-gray;
     margin-bottom: 1.5rem;
   }
 
@@ -43,6 +41,19 @@
   a {
     color: $dark-gray;
     text-decoration: none;
+  }
+
+  figure {
+    margin: 1.8rem 0.5rem;
+
+    &.with-sound img {
+      cursor: pointer;
+    }
+
+    figcaption {
+      text-align: center;
+      @include font(19, 15, 19);
+    }
   }
 
   &.questions p {
