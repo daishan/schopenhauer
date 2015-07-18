@@ -4,3 +4,4 @@ node_modules
 public/
 twistd.pid
 app/assets/content/music
+TODO.*
