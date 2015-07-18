@@ -75,7 +75,7 @@ var schop = (function ($) {
         svgText.span(nodetexts[i].lines[1], {x: x2, y: y2});
 
         var $text = $(svg.text(0, 0, svgText));
-        $text.addClass('nav-text');
+        $text.addClass('nav-text').addClass('nav-text-' + i);
         $text.click(function (ev) {
             //console.log('click nav-text', ev);
             var headlineText = getHtmlNodeText(i);
@@ -307,11 +307,26 @@ var schop = (function ($) {
         });
     }
 
+    function getPage() {
+        if ($('#nav').hasClass('nav-small')) {
+            return 'second';
+        } else {
+            return 'first';
+        }
+    }
+
+    function isMusicSelected() {
+        var $musicButton = $('#music-button');
+        return $musicButton.attr('src') == $musicButton.data('src-on');
+    }
+
     return {
         'init': init,
         'render': renderNavigation,
         'calcLineWidths': calcLineWidths,
-        'load': loadContentWithTitle
+        'load': loadContentWithTitle,
+        'getPage': getPage,
+        'isMusicSelected': isMusicSelected
     };
 })(jQuery);
 

@@ -17,7 +17,9 @@ var plusmenu = (function ($, schop) {
         $('#links-button').click(function () {
             schop.load('Quellen', 'special', 'sources');
             $('#menu-buttons').find('.button').removeClass('active');
-        })
+        });
+
+        $('#help-button').click(help.activate);
     }
 
     return {

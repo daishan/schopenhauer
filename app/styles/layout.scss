@@ -30,13 +30,13 @@ hr {
   transition-timing-function: linear;
 
   stroke: $light-gray;
-  stroke-width: 1.5;
+  stroke-width: $nav-line-stroke-width;
   z-index: 0;
 }
 
 .nav-line-hover {
   stroke: $orange;
-  stroke-width: 3;
+  stroke-width: $nav-line-stroke-width * 2;
 }
 
 .nav-line-clickable {

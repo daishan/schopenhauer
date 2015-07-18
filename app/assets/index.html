@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="vendor/reset.css">
     <link rel="stylesheet" type="text/css" href="font/merriweather.css">
     <link rel="stylesheet" type="text/css" href="font/playfair.css">
@@ -28,6 +29,7 @@
                 <div id="topic" class="topic">
                     <div id="singleheadline" class="topic-single">
                         <h1></h1>
+
                         <h2></h2>
                     </div>
                     <div id="doubleheadline" class="topic-synthesis">
@@ -46,8 +48,14 @@
                     <img class="button audioctrl" id="text-button" src="buttons/Sprecher.svg" data-src-off="buttons/Sprecher.svg"
                          data-src-on="buttons/Sprecher-aktiv.svg" alt="Text" title="Text"/>
                     <img class="button audioctrl" id="music-button" src="buttons/Musik.svg" data-src-off="buttons/Musik.svg"
-                         data-src-on="buttons/Musik-aktiv.svg"
-                         alt="Musik" title="Musik"/>
+                         data-src-on="buttons/Musik-aktiv.svg" alt="Musik" title="Musik"/>
+
+                    <div id="help-second-page">
+                        <div id="help-speaker" class="help-second-page help-element">Hör dir die Informationen…</div>
+                        <div id="help-speaker-line" class="help-second-page help-element horizontal-line"></div>
+                        <div id="help-music" class="help-second-page help-element">…oder die Musik zum Thema an.</div>
+                        <div id="help-music-line" class="help-second-page help-element horizontal-line"></div>
+                    </div>
                 </div>
                 <div id="buttons-center-2">
                     <img class="button button-small" id="info-button" src="buttons/Info.svg" data-src-off="buttons/Info.svg"
@@ -85,7 +93,7 @@
     </div>
     <div id="plus-menu">
         <div id="menu-buttons">
-            <img class="button" id="hilfe-button" src="buttons/Hilfe.svg" alt="Hilfe" title="Hilfe"/>
+            <img class="button" id="help-button" src="buttons/Hilfe.svg" alt="Hilfe" title="Hilfe"/>
             <a href="content/Sound of Schopenhauer - Sprechertexte.pdf" target="_blank">
                 <img class="button" id="pdf-button" src="buttons/PDF.svg" alt="Sprechertexte als PDF" title="Sprechertexte als PDF"/>
             </a>
@@ -94,7 +102,14 @@
         </div>
         <img class="button button-small" id="plus-button" src="buttons/Plus.svg"/>
     </div>
+    <div id="help-topic-select" class="help-first-page help-element">Wähle ein Thema…</div>
+    <div id="help-topic-select-line" class="help-first-page help-element vertical-line"></div>
+    <div id="help-synthesis-select" class="help-first-page help-element">…oder eine Linie aus, um zwei Themen miteinander zu verbinden.</div>
+    <div id="help-synthesis-select-line" class="help-first-page help-element vertical-line"></div>
+    <div id="help-music-info" class="help-music-info help-element">Lies dir die erklärenden Texte zur Musik durch.</div>
+    <div id="help-music-info-line" class="help-music-info help-element vertical-line"></div>
 </div>
+<div id="help-overlay"></div>
 <script type="text/javascript" src="vendor/jquery/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="vendor/jquery.svg/jquery.svg.js"></script>
 <script type="text/javascript" src="vendor/jquery.svgdom/jquery.svgdom.js"></script>
