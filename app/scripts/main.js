@@ -329,7 +329,7 @@ var nodetexts = [
     {complete: 'Klassische & populäre Musik', lines: ['Klassische &', 'populäre Musik'], align: 'right', offset: {x: -30, y: 0}, sub: 'Musiktrivia'}
 ];
 
-var linewidths = [[227, 126], [209, 220], [209, 93], [195, 213], [192, 199], [209, 185], [253, 209], [218, 264]];
+var linewidths = [[227, 120], [209, 220], [209, 93], [195, 213], [188, 199], [231, 200], [247, 219], [238, 284]];
 
 var synthesisMapping = {
     '0_1': '1',
