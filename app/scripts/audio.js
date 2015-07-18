@@ -4,11 +4,11 @@ var audio = (function ($) {
     var currentPlaylist;
     var titleOverride;
 
-    var audioElement = $('audio').get(0);
+    var audioElement = $('#player').find('> audio').get(0);
 
     function init() {
         console.log('audio.init()');
-        $('audio')
+        $(audioElement)
             .on('timeupdate', function (ev) {
                 //console.log('timeupdate', ev, this);
                 updateSeekBar(this.currentTime / this.duration);
@@ -78,7 +78,7 @@ var audio = (function ($) {
 
     function selectEntry(entry) {
         console.log('song selected', entry);
-        $('audio').attr('src', 'content/' + entry.file);
+        $(audioElement).attr('src', 'content/' + entry.file);
         $(this).siblings().removeClass('selected');
         $(this).addClass('selected');
         updateSeekBar(0);
@@ -87,7 +87,7 @@ var audio = (function ($) {
     }
 
     function stop() {
-        $('audio').get(0).pause();
+        audioElement.pause();
     }
 
     function reset() {

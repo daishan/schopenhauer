@@ -4,6 +4,13 @@ var schop = (function ($) {
     var currentCode;
     var firstIndex, secondIndex;
 
+    var $nav = $('#nav');
+    var $navContainer = $('#nav-container');
+    var $header = $('#header');
+    var $textButton = $('#text-button');
+    var $musicButton = $('#music-button');
+    var $infoButton = $('#info-button');
+
     function renderNavigation(radius, offsetX, offsetY) {
         var svg = getSvgContext();
         console.log('renderNavigation', svg);
@@ -14,7 +21,7 @@ var schop = (function ($) {
                     continue;
                 }
                 var point2 = pointAtOffset(j, radius, offsetX, offsetY);
-                var $line = renderLine(svg, point1, point2, 'line' + i + '_' + j, 'nav-line');
+                renderLine(svg, point1, point2, 'line' + i + '_' + j, 'nav-line');
                 var $linec = renderLine(svg, point1, point2, 'linec' + i + '_' + j, 'nav-line-clickable');
                 attachClickLineListener($linec, i, j);
                 attachLineHoverListener($linec, i, j);
@@ -24,7 +31,7 @@ var schop = (function ($) {
     }
 
     function getSvgContext() {
-        var $nav = $('#nav');
+        $nav = $('#nav');
         $nav.svg();
         return $nav.svg('get');
     }
@@ -110,7 +117,7 @@ var schop = (function ($) {
     function attachLineHoverListener(line, i, j) {
         line.hover((function (i, j) {
                 return function () {
-                    if ($('#nav').hasClass('nav-small')) {
+                    if ($nav.hasClass('nav-small')) {
                         return;
                     }
                     var targetLine = $('#line' + i + '_' + j);
@@ -176,28 +183,27 @@ var schop = (function ($) {
     }
 
     function toggleNavigation() {
-        var $nav = $('#nav');
         if ($nav.hasClass('nav-small')) {
             $('#contentpane').removeClass('active');
             resetAudioAndButtons();
         }
-        $('#header').find('.title').removeClass('visible');
+        $header.find('.title').removeClass('visible');
         $nav.removeClass('nav-small-finished');
         $nav.toggleClass('nav-small');
         $nav.children().removeClass('nav-line-hover');
-        $('#nav-container').toggleClass('nav-small', $nav.hasClass('nav-small'));
+        $navContainer.toggleClass('nav-small', $nav.hasClass('nav-small'));
     }
 
     function resetAudioAndButtons() {
         audio.reset();
-        toggleButtonState($('#text-button'), false);
-        toggleButtonState($('#music-button'), false);
-        $('#info-button').removeClass('visible');
+        toggleButtonState($textButton, false);
+        toggleButtonState($musicButton, false);
+        $infoButton.removeClass('visible');
     }
 
     function toggleSingleTopic(i) {
         toggleNavigation();
-        if ($('#nav').hasClass('nav-small')) {
+        if ($nav.hasClass('nav-small')) {
             selectCode(i);
             loadContentOnly('questions', currentCode);
         }
@@ -205,7 +211,7 @@ var schop = (function ($) {
 
     function toggleSynthesis(i, j) {
         toggleNavigation();
-        if ($('#nav').hasClass('nav-small')) {
+        if ($nav.hasClass('nav-small')) {
             selectCode(i, j);
             loadContentOnly('questions', currentCode);
         }
@@ -242,7 +248,7 @@ var schop = (function ($) {
                     $('#content').load('content/' + section + '/A.html');
                 }
             });
-        if (!$('#nav').hasClass('nav-small')) {
+        if (!$nav.hasClass('nav-small')) {
             toggleNavigation();
         }
         $('#buttons-center-1').addClass('visible');
@@ -255,30 +261,30 @@ var schop = (function ($) {
     function init() {
         audio.init();
 
-        $('#nav').click(function (ev) {
-            if ($('#nav').hasClass('nav-small')) {
+        $nav.click(function (ev) {
+            if ($nav.hasClass('nav-small')) {
                 toggleNavigation();
             }
         });
-        $('#nav-container').on('webkitTransitionEnd transitionend', function (ev) {
+        $navContainer.on('webkitTransitionEnd transitionend', function (ev) {
             if (ev.originalEvent.propertyName == 'height') {
                 console.log('transitionEnd', ev.originalEvent.propertyName);
-                if ($('#nav').hasClass('nav-small')) {
+                if ($nav.hasClass('nav-small')) {
                     $('#contentpane').addClass('active');
-                    $('#nav').addClass('nav-small-finished');
-                    $('#header').find('.title').addClass('down');
+                    $nav.addClass('nav-small-finished');
+                    $header.find('.title').addClass('down');
                 } else {
-                    $('#header').find('.title').removeClass('down');
+                    $header.find('.title').removeClass('down');
                 }
-                $('#header').find('.title').addClass('visible');
+                $header.find('.title').addClass('visible');
             }
         });
 
-        $('#text-button').click(function () {
+        $textButton.click(function () {
             console.log('text-button', firstIndex, secondIndex);
-            toggleButtonState($(this), true);
-            toggleButtonState($('#music-button'), false);
-            $('#info-button').removeClass('visible');
+            toggleButtonState($textButton, true);
+            toggleButtonState($musicButton, false);
+            $infoButton.removeClass('visible');
             loadContentOnly('questions', currentCode);
             var title = nodetexts[firstIndex].complete;
             if (secondIndex != null) {
@@ -287,16 +293,16 @@ var schop = (function ($) {
             audio.loadPlaylist(speakerPlaylists[currentCode] ? speakerPlaylists[currentCode] : speakerPlaylists['A'], title);
         });
 
-        $('#music-button').click(function () {
+        $musicButton.click(function () {
             console.log('music-button');
-            toggleButtonState($(this), true);
-            toggleButtonState($('#text-button'), false);
+            toggleButtonState($musicButton, true);
+            toggleButtonState($textButton, false);
             loadContentOnly('questions', currentCode);
-            $('#info-button').addClass('visible');
+            $infoButton.addClass('visible');
             audio.loadPlaylist(musicPlaylists[currentCode] ? musicPlaylists[currentCode] : musicPlaylists['A']);
         });
 
-        $('#info-button').click(function (ev) {
+        $infoButton.click(function (ev) {
             console.log('info-button', ev);
             loadContentOnly('musicinfo', currentCode);
         });
@@ -308,7 +314,7 @@ var schop = (function ($) {
     }
 
     function getPage() {
-        if ($('#nav').hasClass('nav-small')) {
+        if ($nav.hasClass('nav-small')) {
             return 'second';
         } else {
             return 'first';
@@ -316,7 +322,6 @@ var schop = (function ($) {
     }
 
     function isMusicSelected() {
-        var $musicButton = $('#music-button');
         return $musicButton.attr('src') == $musicButton.data('src-on');
     }
 
