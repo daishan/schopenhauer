@@ -7,7 +7,7 @@
 
   h1 {
     color: $orange;
-    text-transform: capitalize;
+    text-transform: uppercase;
     margin-bottom: 2rem;
 
     &.nonfirst {
@@ -60,9 +60,5 @@
     @include font(36, 6, 47);
     @include font-playfair();
     font-style: italic;
-  }
-
-  &.special h1 {
-    text-transform: uppercase;
   }
 }
