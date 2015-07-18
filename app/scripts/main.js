@@ -329,12 +329,12 @@ var nodetexts = [
     {complete: 'Die Welt als Wille', lines: ['Die Welt als', 'Wille'], align: 'left', offset: {x: 30, y: 0}, sub: 'Metaphysik'},
     {complete: 'Metaphysik des Schönen', lines: ['Metaphysik', 'des Schönen'], align: 'left', offset: {x: 30, y: 0}, sub: 'Ästhetik'},
     {complete: 'Bejahung & Verneinung', lines: ['Bejahung &', 'Verneinung'], align: 'center', offset: {x: 0, y: 60}, sub: 'Ethik'},
-    {complete: 'Schlechte & gute Musik', lines: ['Schlechte &', 'gute Musik'], align: 'right', offset: {x: -30, y: 0}, sub: 'Musikwertung'},
+    {complete: 'Gute & schlechte Musik', lines: ['Gute &', 'schlechte Musik'], align: 'right', offset: {x: -30, y: 0}, sub: 'Musikwertung'},
     {complete: 'Entzweiung & Versöhnung', lines: ['Entzweiung &', 'Versöhnung'], align: 'right', offset: {x: -30, y: 0}, sub: 'Musiktheorie'},
     {complete: 'Klassische & populäre Musik', lines: ['Klassische &', 'populäre Musik'], align: 'right', offset: {x: -30, y: 0}, sub: 'Musiktrivia'}
 ];
 
-var linewidths = [[227, 120], [209, 220], [209, 93], [195, 213], [188, 199], [231, 200], [247, 219], [238, 284]];
+var linewidths = [[227, 120], [209, 220], [209, 93], [195, 213], [188, 199], [125, 310], [247, 219], [238, 284]];
 
 var synthesisMapping = {
     '0_1': '1',
