@@ -327,6 +327,10 @@ var schop = (function ($) {
         }
     }
 
+    function isSpecialPage() {
+        return $('#content').hasClass('special');
+    }
+
     function isMusicSelected() {
         return $musicButton.attr('src') == $musicButton.data('src-on');
     }
@@ -344,6 +348,7 @@ var schop = (function ($) {
         'calcLineWidths': calcLineWidths,
         'load': loadContentWithTitle,
         'getPage': getPage,
+        'isSpecialPage': isSpecialPage,
         'isMusicSelected': isMusicSelected
     };
 })(jQuery);

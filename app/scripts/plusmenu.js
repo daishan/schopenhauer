@@ -5,11 +5,7 @@ var plusmenu = (function ($, schop) {
 
     function init() {
         console.log('plusmenu.init()');
-        $('#plus-button')
-            .click(function () {
-                console.log('#plus-button click');
-                $menuButtons.find('.button').toggleClass('active');
-            });
+        $('#plus-button').click(open);
 
         $('#impressum-button').click(function () {
             schop.load("Impressum", 'special', 'impressum');
@@ -28,6 +24,16 @@ var plusmenu = (function ($, schop) {
         $('#help-button').click(function () {
             help.activate(close);
         });
+    }
+
+    function open() {
+        console.log('#plus-button click');
+        if (schop.isSpecialPage()) {
+            $('#help-button').hide();
+        } else {
+            $('#help-button').show();
+        }
+        $menuButtons.find('.button').toggleClass('active');
     }
 
     function close() {
