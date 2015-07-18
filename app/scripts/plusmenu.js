@@ -13,6 +13,11 @@ var plusmenu = (function ($, schop) {
             schop.load("Impressum", 'special', 'impressum');
             $('#menu-buttons').find('.button').removeClass('active');
         });
+
+        $('#links-button').click(function () {
+            schop.load('Quellen', 'special', 'sources');
+            $('#menu-buttons').find('.button').removeClass('active');
+        })
     }
 
     return {
