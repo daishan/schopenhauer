@@ -331,7 +331,9 @@ hr {
   .main {
     max-width: 95vw;
     max-height: 95vw / $aspect-ratio;
-    //border: 1px solid green;
+    @if $debug {
+      border: 1px solid green;
+    }
   }
   html {
     font-size: 1vw / $aspect-ratio;
@@ -343,7 +345,9 @@ hr {
   .main {
     max-width: 95vh * $aspect-ratio;
     max-height: 95vh;
-    //border: 1px solid blue;
+    @if $debug {
+      border: 1px solid blue;
+    }
   }
   html {
     font-size: 1vh;
