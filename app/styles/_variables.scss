@@ -1,5 +1,6 @@
 @import 'debug';
 
+// --- colors
 $orange: rgb(248, 164, 120);
 $light-gray: rgb(230, 230, 230);
 $dark-gray: rgb(128, 128, 128);
@@ -8,9 +9,11 @@ $dark-gray: rgb(128, 128, 128);
   $light-gray: rgb(230, 0, 230);
 }
 
+// --- buttons
 $button-size: 3.5rem;
 $button-size-small: $button-size * (42/58);
 
+// --- fonts
 $base-font-size: 0.065rem;
 $nav-font-size-correction: 1.795;
 $base-line-spacing: 0.1rem * 0.7;
@@ -31,3 +34,14 @@ $base-letter-spacing: 0.1rem / 1000;
   font-family: 'Playfair Display', serif;
   font-weight: 400;
 }
+
+// --- various sizes
+$nav-small-height: 5.5rem;
+$hr-height: 0.11rem;
+$viewport-frame-thickness: 0.35rem;
+$title-first-height: 1rem;
+
+// --- aspect ratio
+$aspect-ratio-x: 4;
+$aspect-ratio-y: 3;
+$aspect-ratio: $aspect-ratio-x / $aspect-ratio-y;

@@ -181,7 +181,7 @@ var schop = (function ($) {
             $('#contentpane').removeClass('active');
             resetAudioAndButtons();
         }
-        $('#nav-container').find('hr').removeClass('active');
+        $('#header').find('.title').removeClass('visible');
         $nav.removeClass('nav-small-finished');
         $nav.toggleClass('nav-small');
         $nav.children().removeClass('nav-line-hover');
@@ -237,11 +237,11 @@ var schop = (function ($) {
             .removeClass('musicinfo special questions')
             .addClass(section)
             .load('content/' + section + '/' + code + '.html', function (response, status) {
-            if (status == 'error') {
-                console.error('content loading failed');
-                $('#content').load('content/' + section + '/A.html');
-            }
-        });
+                if (status == 'error') {
+                    console.error('content loading failed');
+                    $('#content').load('content/' + section + '/A.html');
+                }
+            });
         if (!$('#nav').hasClass('nav-small')) {
             toggleNavigation();
         }
@@ -261,11 +261,16 @@ var schop = (function ($) {
             }
         });
         $('#nav-container').on('webkitTransitionEnd transitionend', function (ev) {
-            //console.log('transitionEnd', ev.originalEvent.propertyName);
-            if (ev.originalEvent.propertyName == 'height' && $('#nav').hasClass('nav-small')) {
-                $('#contentpane').addClass('active');
-                $('#nav').addClass('nav-small-finished');
-                $('#nav-container').find('hr').addClass('active');
+            if (ev.originalEvent.propertyName == 'height') {
+                console.log('transitionEnd', ev.originalEvent.propertyName);
+                if ($('#nav').hasClass('nav-small')) {
+                    $('#contentpane').addClass('active');
+                    $('#nav').addClass('nav-small-finished');
+                    $('#header').find('.title').addClass('down');
+                } else {
+                    $('#header').find('.title').removeClass('down');
+                }
+                $('#header').find('.title').addClass('visible');
             }
         });
 

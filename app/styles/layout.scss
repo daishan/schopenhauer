@@ -1,19 +1,12 @@
 @import 'variables';
 
-$nav-small-height: 5.5rem;
-$hr-height: 0.1rem;
-
-$aspect-ratio-x: 4;
-$aspect-ratio-y: 3;
-$aspect-ratio: $aspect-ratio-x / $aspect-ratio-y;
-
 html {
   font-size: 1vmin;
 }
 
 body {
   height: 100vh; /* this shouldn't be necessary, but it is!? */
-  box-shadow: inset $orange 0 0 0 0.35rem;
+  box-shadow: inset $orange 0 0 0 $viewport-frame-thickness;
   overflow: hidden;
 }
 
@@ -94,15 +87,6 @@ hr {
 
   &.nav-small {
     height: $nav-small-height;
-  }
-
-  hr {
-    display: none;
-    width: 45%;
-
-    &.active {
-      display: block;
-    }
   }
 }
 
@@ -310,23 +294,6 @@ hr {
   margin-bottom: $button-size;
 }
 
-#title {
-  color: $light-gray;
-  text-transform: uppercase;
-  text-align: center;
-  padding-top: ($nav-small-height / 2) + 1rem;
-
-  .title-small {
-    @include font-merriweather();
-    @include font(19, 120, 19)
-  }
-
-  .title-large {
-    @include font-playfair();
-    @include font(30, 80, 36)
-  }
-}
-
 @media screen and (max-aspect-ratio: #{$aspect-ratio-x} / #{$aspect-ratio-y}) {
   .main {
     max-width: 95vw;
@@ -338,7 +305,6 @@ hr {
   html {
     font-size: 1vw / $aspect-ratio;
   }
-
 }
 
 @media screen and (min-aspect-ratio: #{$aspect-ratio-x} / #{$aspect-ratio-y}) {
