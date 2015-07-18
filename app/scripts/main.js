@@ -120,8 +120,14 @@ var schop = (function ($) {
                     if ($nav.hasClass('nav-small')) {
                         return;
                     }
-                    var targetLine = $('#line' + i + '_' + j);
-                    targetLine.attr('class', 'nav-line nav-line-hover');
+                    var $targetLine = $('#line' + i + '_' + j);
+                    $targetLine.attr('class', 'nav-line nav-line-hover');
+
+                    // move line and its clickable version to the end because element order is svg's version of z-index
+                    // the clickable line must come after the (display) line
+                    $nav
+                        .append($targetLine)
+                        .append($(this));
                 }
             })(i, j),
             (function (i, j) {
