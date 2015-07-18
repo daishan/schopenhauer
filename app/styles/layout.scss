@@ -314,21 +314,16 @@ hr {
   color: $light-gray;
   text-transform: uppercase;
   text-align: center;
-  //font-weight: 400;
-  //letter-spacing: 2px;
-
   padding-top: ($nav-small-height / 2) + 1rem;
 
   .title-small {
-    //font-size: 20px;
     @include font-merriweather();
-    @include font(16, 15, 25)
+    @include font(19, 120, 19)
   }
 
   .title-large {
-    //font-size: 26px;
     @include font-playfair();
-    @include font(26, 15, 25)
+    @include font(30, 80, 36)
   }
 }
 

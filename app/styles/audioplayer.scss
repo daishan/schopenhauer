@@ -39,7 +39,7 @@
 
   #playlist {
     @include font-merriweather();
-    @include font(17, 25, 28);
+    @include font(17, 31, 28);
     text-align: center;
 
     li {
