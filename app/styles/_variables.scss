@@ -7,7 +7,7 @@ $light-gray: rgb($light-gray-value, $light-gray-value, $light-gray-value);
 $dark-gray: rgb(128, 128, 128);
 
 @if $debug {
-  $light-gray: rgb($light-gray-value, 0, $light-gray-value);
+  $light-gray: red;
 }
 
 // --- buttons
