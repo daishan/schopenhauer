@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="app.css">
     <title>Sound of Schopenhauer</title>
 </head>
-<body>
+<body class="intro">
 <base target="_blank">
 <div id="main" class="main">
     <div id="header">
@@ -106,6 +106,14 @@
     <div id="help-synthesis-select-line" class="help-first-page help-element vertical-line"></div>
     <div id="help-music-info" class="help-music-info help-element">Lies dir die erklärenden Texte zur Musik durch.</div>
     <div id="help-music-info-line" class="help-music-info help-element vertical-line"></div>
+    <div id="intro-elements">
+        <div class="intro-info visible">Bitte Ton einschalten und klicken.</div>
+        <div class="intro-headline">»Musik ist eine zweite Wirklichkeit«</div>
+        <div class="intro-subline"><span class="firstname">Arthur</span><span class="lastname"> Schopenhauer</span></div>
+        <div class="start-button">Start</div>
+        <div class="skip-button">Überspringen</div>
+        <audio id="intro-music" preload="auto" src="content/intro.mp3"></audio>
+    </div>
 </div>
 <div id="help-overlay"></div>
 <script type="text/javascript" src="vendor/jquery/jquery-2.1.4.js"></script>

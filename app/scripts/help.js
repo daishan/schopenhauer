@@ -32,5 +32,5 @@ var help = (function ($) {
     return {
         init: init,
         activate: activate
-    }
+    };
 })(jQuery);

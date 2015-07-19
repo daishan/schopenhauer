@@ -10,7 +10,7 @@ var audio = (function ($) {
         console.log('audio.init()');
         $(audioElement)
             .on('timeupdate', function (ev) {
-                //console.log('timeupdate', ev, this);
+                console.log('timeupdate', this.currentTime);
                 updateSeekBar(this.currentTime / this.duration);
             })
             .on('ended', function (ev) {

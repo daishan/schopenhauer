@@ -43,8 +43,7 @@ var plusmenu = (function ($, schop) {
 
     return {
         init: init
-    }
-
+    };
 })(jQuery, schop);
 
 $(document).ready(plusmenu.init);

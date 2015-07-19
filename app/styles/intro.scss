@@ -1,0 +1,295 @@
+@import 'variables';
+
+$width-multiplier: 2;
+
+body:not(.intro) #intro-elements {
+  display: none;
+}
+
+#intro-elements {
+  z-index: 1000;
+
+  > * {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    cursor: default;
+    user-select: none;
+  }
+
+  .intro-headline, .firstname, .lastname, .start-button, .skip-button {
+    animation-duration: 23.703s;
+    animation-iteration-count: 1;
+    animation-play-state: paused;
+    animation-fill-mode: both;
+  }
+
+  .intro-subline, .start-button, .skip-button, .intro-info {
+    @include font-merriweather();
+    @include font(22, 120, 22);
+    text-transform: uppercase;
+  }
+
+  .intro-info {
+    color: $dark-gray;
+    top: 46.8%;
+    display: none;
+    &.visible {
+      display: block;
+    }
+  }
+
+  .intro-headline {
+    @include font-playfair();
+    @include font(70, 20, 70);
+    color: $dark-gray;
+    font-style: italic;
+    top: 46.8%;
+    animation-name: headline;
+  }
+
+  .intro-subline {
+    top: 52.6%;
+    color: $orange;
+
+    .firstname {
+      animation-name: firstname;
+    }
+    .lastname {
+      animation-name: lastname;
+    }
+  }
+
+  .start-button {
+    top: 85%;
+    color: $dark-gray;
+    cursor: pointer;
+    animation-name: start-button;
+  }
+
+  .skip-button {
+    bottom: 0;
+    right: 0;
+    width: auto;
+    text-align: right;
+    cursor: pointer;
+    animation-name: skip-button;
+    color: $light-gray;
+  }
+}
+
+.intro {
+  .nav .nav-text {
+    visibility: hidden;
+  }
+
+  #header, #plus-menu {
+    visibility: hidden;
+  }
+
+  #intro-overlay {
+    display: block;
+  }
+
+  .nav {
+    animation: nav 23.703s 1;
+    animation-play-state: paused;
+    animation-fill-mode: backwards;
+
+    .nav-line {
+      animation-duration: 23.703s;
+      animation-iteration-count: 1;
+      animation-play-state: paused;
+      animation-name: other-lines;
+    }
+
+    #line0_4 {
+      animation-name: line0_4;
+    }
+
+    #line3_7 {
+      animation-name: line3_7;
+    }
+
+    #line1_5 {
+      animation-name: line1_5;
+    }
+
+    #line2_6 {
+      animation-name: line2_6;
+    }
+  }
+
+  &.playing {
+    .nav, .nav-line {
+      animation-play-state: running;
+    }
+    #intro-elements {
+      .intro-headline, .firstname, .lastname, .start-button, .skip-button {
+        animation-play-state: running;
+      }
+    }
+  }
+}
+
+@keyframes nav {
+  0% {
+    opacity: 0;
+  }
+
+  1.055% {
+    opacity: 0;
+  }
+
+  1.768% {
+    opacity: 1;
+  }
+
+  6.721% {
+    opacity: 0;
+  }
+
+  9.492% {
+    opacity: 0;
+  }
+
+  10.205% {
+    opacity: 1;
+  }
+
+  15.158% {
+    opacity: 0;
+  }
+
+  18.462% {
+    opacity: 0;
+  }
+
+  28.477% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes line0_4 {
+  0%, 35.582%, 62.055%, 100% {
+    stroke: $light-gray;
+    stroke-width: $nav-line-stroke-width;
+  }
+
+  37.645%, 56.630% {
+    stroke: $orange;
+    stroke-width: $nav-line-stroke-width * $width-multiplier;
+  }
+}
+
+@keyframes line3_7 {
+  0%, 37.645%, 62.055%, 100% {
+    stroke: $light-gray;
+    stroke-width: $nav-line-stroke-width;
+  }
+
+  40.383%, 56.630% {
+    stroke: $orange;
+    stroke-width: $nav-line-stroke-width * $width-multiplier;
+  }
+}
+
+@keyframes line1_5 {
+  0%, 39.430%, 62.055%, 100% {
+    stroke: $light-gray;
+    stroke-width: $nav-line-stroke-width;
+  }
+
+  42.290%, 56.630% {
+    stroke: $orange;
+    stroke-width: $nav-line-stroke-width * $width-multiplier;
+  }
+}
+
+@keyframes line2_6 {
+  0%, 41.121%, 62.055%, 100% {
+    stroke: $light-gray;
+    stroke-width: $nav-line-stroke-width;
+  }
+
+  44.522%, 56.630% {
+    stroke: $orange;
+    stroke-width: $nav-line-stroke-width * $width-multiplier;
+  }
+}
+
+@keyframes other-lines {
+  0%, 43.277%, 62.055%, 100% {
+    stroke: $light-gray;
+    stroke-width: $nav-line-stroke-width;
+  }
+
+  50.605%, 56.630% {
+    stroke: $orange;
+    stroke-width: $nav-line-stroke-width * $width-multiplier;
+  }
+}
+
+@keyframes headline {
+  0%, 79.133% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  80.256%, 100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes firstname {
+  0%, 81.669% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  82.563%, 100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes lastname {
+  0%, 82.964% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  83.859%, 100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes start-button {
+  0%, 84.369% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  85.263%, 100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes skip-button {
+  0%, 95% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
