@@ -331,7 +331,7 @@ var schop = (function ($) {
     }
 
     function isSpecialPage() {
-        return $('#content').hasClass('special');
+        return $nav.hasClass('nav-small') && $('#content').hasClass('special');
     }
 
     function isMusicSelected() {
