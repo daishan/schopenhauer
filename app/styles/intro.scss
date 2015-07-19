@@ -2,14 +2,21 @@
 
 $width-multiplier: 2;
 
-body:not(.intro) #intro-elements {
-  display: none;
-}
+//body:not(.intro) #intro-overlay {
+//  display: none;
+//}
 
-#intro-elements {
+#intro-overlay {
   z-index: 1000;
 
-  > * {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+
+  .main > * {
     text-align: center;
     position: absolute;
     width: 100%;
@@ -124,7 +131,7 @@ body:not(.intro) #intro-elements {
     .nav, .nav-line {
       animation-play-state: running;
     }
-    #intro-elements {
+    #intro-overlay {
       .intro-headline, .firstname, .lastname, .start-button, .skip-button {
         animation-play-state: running;
       }

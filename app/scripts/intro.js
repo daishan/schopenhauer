@@ -1,11 +1,9 @@
 var intro = (function ($) {
     "use strict";
 
-    var $body, $nav, $audio, audio, $startButton, $info, $skipButton;
+    var $body, $nav, $audio, audio, $startButton, $info, $skipButton, $overlay;
 
     function init() {
-        console.log('intro.init()');
-
         $body = $('body');
         $nav = $('#nav');
         $audio = $('#intro-music');
@@ -13,13 +11,15 @@ var intro = (function ($) {
         $startButton = $('.start-button');
         $info = $('.intro-info');
         $skipButton = $('.skip-button');
+        $overlay = $('#intro-overlay');
+        console.log('intro.init()', $overlay, $nav);
 
         $audio.on('playing', function () {
             console.log('intro.audio.playing', time());
             $body.addClass('playing');
         });
 
-        $body.click(start);
+        $overlay.click(start);
         $startButton.click(end);
         $skipButton.click(end);
     }
@@ -36,9 +36,24 @@ var intro = (function ($) {
             audio.pause();
             audio.currentTime = 0;
         }
-        audio.play();
 
-        $body.off('click', start);
+        if (audio.readyState == 0) {
+            console.error('intro.audio.readyState == 0', audio);
+            console.info('intro audio broken, skipping intro...');
+            end();
+        }
+        audio.play();
+        setTimeout(function () {
+            if (audio.error) {
+                console.error('intro.audio.error', audio.error, audio);
+                console.info('intro audio broken, skipping intro...');
+                end();
+            } else {
+                console.log(audio.error, audio);
+            }
+        }, 100);
+
+        $overlay.off('click', start);
         return false;
     }
 

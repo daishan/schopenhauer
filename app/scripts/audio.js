@@ -32,8 +32,14 @@ var audio = (function ($) {
 
     function play() {
         toggleButtonState($('#play-button'), true);
+        if (audioElement.error) {
+            console.log('intro.audio.error', audioElement.error, audioElement);
+        }
         if (audioElement.paused) {
             audioElement.play();
+            if (audioElement.error) {
+                console.log('intro.audio.error2', audioElement.error);
+            }
             return true;
         } else {
             audioElement.pause();
