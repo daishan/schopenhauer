@@ -202,6 +202,7 @@ var schop = (function ($) {
         audio.reset();
         toggleButtonState($textButton, false);
         toggleButtonState($musicButton, false);
+        toggleButtonState($infoButton, false);
         $infoButton.removeClass('visible');
     }
 
@@ -303,6 +304,7 @@ var schop = (function ($) {
             console.log('music-button');
             toggleButtonState($musicButton, true);
             toggleButtonState($textButton, false);
+            toggleButtonState($infoButton, false);
             loadContentOnly('questions', currentCode);
             $infoButton.addClass('visible');
             audio.loadPlaylist(musicPlaylists[currentCode] ? musicPlaylists[currentCode] : musicPlaylists['A']);
@@ -311,6 +313,7 @@ var schop = (function ($) {
         $infoButton.click(function (ev) {
             console.log('info-button', ev);
             loadContentOnly('musicinfo', currentCode);
+            toggleButtonState($infoButton, true);
         });
 
         $.ajaxSetup({
