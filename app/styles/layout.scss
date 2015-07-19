@@ -76,8 +76,8 @@ hr {
   .nav-text {
     transition: opacity 1s, fill 0.1s;
 
-    @include font-playfair();
-    @include font(27 * $nav-font-size-correction, 40, 50);
+    //@include font-playfair();
+    //@include font(27 * $nav-font-size-correction, 40, 50);
     text-transform: uppercase;
     fill: $dark-gray;
     opacity: 100;

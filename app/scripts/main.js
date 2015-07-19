@@ -77,8 +77,8 @@ var schop = (function ($) {
         y2 = point.y + nodetexts[i].offset.y + 30;
 
         var svgText = svg.createText();
-        svgText.span(nodetexts[i].lines[0], {x: x1, y: y1});
-        svgText.span(nodetexts[i].lines[1], {x: x2, y: y2});
+        svgText.span(nodetexts[i].lines[0], {x: x1, y: y1, fontFamily: 'Playfair Display', fontSize: 30, letterSpacing: 2.5});
+        svgText.span(nodetexts[i].lines[1], {x: x2, y: y2, fontFamily: 'Playfair Display', fontSize: 30, letterSpacing: 2.5});
 
         var $text = $(svg.text(0, 0, svgText));
         $text.addClass('nav-text').addClass('nav-text-' + i);
