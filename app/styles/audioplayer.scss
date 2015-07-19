@@ -41,6 +41,7 @@
     @include font(17, 31, 28);
     text-align: center;
     color: $dark-gray;
+    margin-top: 1rem;
 
     li {
       cursor: pointer;

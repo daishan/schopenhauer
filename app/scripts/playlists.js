@@ -52,12 +52,12 @@ var musicPlaylists = {
     ],
     '23': [
         {title: 'Guiseppe Verdi - Messa da Requiem - Dies Irae', file: 'music/23_Guiseppe Verdi - Messa da Requiem - Dies Irae.mp3', length: '2:27'},
-        {title: 'James Blake - Limit To Your Love', file: 'music/23_James Blake - Limit To Your Love.mp3', length: '3:18'},
         {
             title: 'Wolfgang Amadeus Mozart - Requiem in d-Moll - Lacrimosa',
             file: 'music/23_Wolfgang Amadeus Mozart - Requiem in d-Moll - Lacrimosa.mp3',
             length: '3:22'
-        }
+        },
+        {title: 'James Blake - Limit To Your Love', file: 'music/23_James Blake - Limit To Your Love.mp3', length: '3:18'}
     ],
     '24': [{
         title: 'Gioachino Rossini - Petite Messe Solennelle - Cum sancto Spiritu',
