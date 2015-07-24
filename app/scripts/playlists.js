@@ -65,12 +65,12 @@ var musicPlaylists = {
         length: '5:48'
     }],
     '25': [
-        {title: 'Marvin Gaye - Lets Get It On', file: 'music/25_Marvin Gaye - Lets Get It On.mp3', length: '3:58'},
         {
             title: 'Richard Wagner - Tristan und Isolde - Isoldes Liebestod',
             file: 'music/25_Richard Wagner - Tristan und Isolde - Isoldes Liebestod.mp3',
             length: '7:25'
-        }
+        },
+        {title: 'Marvin Gaye - Lets Get It On', file: 'music/25_Marvin Gaye - Lets Get It On.mp3', length: '3:58'}
     ],
     '26': [
         {title: '3 Penny Choir and Orchestra - Call me maybe', file: 'music/26_3 Penny Choir and Orchestra - Call me maybe.mp3', length: '3:41'},
