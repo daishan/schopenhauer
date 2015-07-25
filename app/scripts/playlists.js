@@ -15,8 +15,8 @@ var musicPlaylists = {
             file: 'music/07_Gioachino Rossini  - Il Barbiere di Siviglia - Largo al factotum.mp3',
             length: '4:58'
         },
-        {title: 'Katy Perry - Wide awake', file: 'music/07_Katy Perry - Wide awake.mp3', length: '3:40'},
-        {title: 'Mariah Carey - Heartbreaker', file: 'music/07_Mariah Carey - Heartbreaker.mp3', length: '4:48'}
+        {title: 'Mariah Carey - Heartbreaker', file: 'music/07_Mariah Carey - Heartbreaker.mp3', length: '4:48'},
+        {title: 'Katy Perry - Wide awake', file: 'music/07_Katy Perry - Wide awake.mp3', length: '3:40'}
     ],
     '8': [{title: 'System of a Down - Science', file: 'music/08_System of a Down - Science.mp3', length: '2:42'}],
     '9': [{title: 'Sergei Rachmaninoff - Die Toteninsel', file: 'music/09_Sergei Rachmaninoff - Die Toteninsel.mp3', length: '21:39'}],
@@ -106,9 +106,9 @@ var musicPlaylists = {
         length: '9:46'
     }],
     'H': [
+        {title: 'Wolfgang Amadeus Mozart - Eine kleine Nachtmusik', file: 'music/H_Wolfgang Amadeus Mozart - Eine kleine Nachtmusik.mp3', length: '5:44'},
         {title: 'Ludwig van Beethoven - Sinfonie 5 - Satz 1', file: 'music/H_Ludwig van Beethoven - Sinfonie 5 - Satz 1.mp3', length: '7:21'},
-        {title: 'Michael Jackson - Beat it', file: 'music/H_Michael Jackson - Beat it.mp3', length: '4:18'},
-        {title: 'Wolfgang Amadeus Mozart - Eine kleine Nachtmusik', file: 'music/H_Wolfgang Amadeus Mozart - Eine kleine Nachtmusik.mp3', length: '5:44'}
+        {title: 'Michael Jackson - Beat it', file: 'music/H_Michael Jackson - Beat it.mp3', length: '4:18'}
     ]
 };
 
